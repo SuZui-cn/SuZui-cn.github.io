@@ -151,17 +151,11 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Anaconda环境的配置（win-linux）"><a href="#Anaconda环境的配置（win-linux）" class="headerlink" title="Anaconda环境的配置（win/linux）"></a>Anaconda环境的配置（win/linux）</h1><h5 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h5><p>在过去的时间里我都是使用python+pycharm的模式，使用pip来管理包，但是随着学习的深入逐渐发现了该模式的缺陷，python版本和包太多很难使用env和pip同时管理，所以就开始转战anaconda，我之前是装的有conda的，但是总感觉缺了点什么，就准备卸载重新装，于是就使用了conda自带的uninstall，结果神奇的事件出现了，无法卸载，无论试几次都不能正常，所以我就使用了硬核的方法，用文件粉碎强行删除了那个文件夹，然后就是我灰溜溜的到处删除配置，比如环境变量。</p>
-<p>在windows下安装conda倒是没什么难度，反正就是记着别选安装程序里的Add to PATH（我严重怀疑我之前的问题就是因为之前安装的时候勾选了这个），然后需要配置三个环境变量，一个anaconda自己的，一个Library里面的bin的，还有一个就是bin目录下的。跟着别人的教程走倒也不是难。最后启动图形化界面anaconda-navigator后面那半个单词我敲错了好多遍哦（需要着重注意）。</p>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><p>采取和pycharm一样的思路，现在win下载好安装包再发到虚拟机上，但是这次出现了新的问题</p>
-<p>第一： 记得选择X86的版本，别选另外一个</p>
-<p>第二： 在使用xftp传输的时候先把.sh文件转换为.zip文件再传输，不然会丢失一些数据导致安装不成功。</p>
-<p>之后需要配置环境变量，这里出现的问题就是需要注意conda安装的路径是在root目录下，又因为root目录需要管理员权限，所以需要先su提权然后再使用 source /etc/profile 重启环境变量才可以正常的使用conda。</p>
-<p>参考链接</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ychgyyn/article/details/82258136">https://blog.csdn.net/ychgyyn/article/details/82258136</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39722119/article/details/83189428">https://blog.csdn.net/qq_39722119/article/details/83189428</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43664907/article/details/108858666">https://blog.csdn.net/weixin_43664907/article/details/108858666</a></p>
- 
+  <h1 id="Anaconda环境的配置（win-linux）"><a href="#Anaconda环境的配置（win-linux）" class="headerlink" title="Anaconda环境的配置（win/linux）"></a>Anaconda环境的配置（win/linux）</h1> 
+      <a class="article-more-link" href="/2021/02/26/Anaconda%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%88winlinux%EF%BC%89/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -197,12 +191,11 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Linux下pycharm破解版的安装"><a href="#Linux下pycharm破解版的安装" class="headerlink" title="Linux下pycharm破解版的安装"></a>Linux下pycharm破解版的安装</h1><p>本人是尊重开发者努力成果的，但是奈何囊中羞涩还没有办法支付专业版的费用，所以就只能先使用破解版了</p>
-<p>（抱怨： 学生认证没通过，学校又不能申请教育邮箱）</p>
-<p>先在用win10系统在Jetbrains官网下载Linux版本的pycharm再用xftp传到Ubuntu上，这里需要注意使用二进制传输，不能使用ascill码传输，不然安装包会无法正常使用。</p>
-<p>破解的过程异常艰辛，我是用的是2020.3.1版本还是Linux下的，我原本想着可以用win版的破解包，结果不得行，唉，又花了大量时间去寻找破解包，最后在一个B站UP那里弄到了无限刷新试用期的，勉强可以使用，等开学找个机会去老校区图书馆问一下教育邮箱的事，不然老实使用破解版也不太好。</p>
-<p>B站UP链接： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av329233152">https://www.bilibili.com/video/av329233152</a></p>
- 
+  <h1 id="Linux下pycharm破解版的安装"><a href="#Linux下pycharm破解版的安装" class="headerlink" title="Linux下pycharm破解版的安装"></a>Linux下pycharm破解版的安装</h1> 
+      <a class="article-more-link" href="/2021/02/26/Linux%E4%B8%8Bpycharm%E7%A0%B4%E8%A7%A3%E7%89%88%E7%9A%84%E5%AE%89%E8%A3%85/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -238,10 +231,11 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Xshell-Xftp管理服务器"><a href="#Xshell-Xftp管理服务器" class="headerlink" title="Xshell+Xftp管理服务器"></a>Xshell+Xftp管理服务器</h1><p>Xshell7和Xftp7挺好的对于个人可以免费使用</p>
-<p>下载网址： <a target="_blank" rel="noopener" href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a></p>
-<p>我使用的是本地的虚拟机，在连接的时候需要注意一点，VMware的虚拟网络vlan0和vlan8需要和本地IP在同一个网段；在使用ifconfig查询ip的时候提示了没有该命令，需要下载一个network-tool，当时搞忘截图了，反正面向百度编程，遇到了就百度那句话就行了。</p>
- 
+  <h1 id="Xshell-Xftp管理服务器"><a href="#Xshell-Xftp管理服务器" class="headerlink" title="Xshell+Xftp管理服务器"></a>Xshell+Xftp管理服务器</h1> 
+      <a class="article-more-link" href="/2021/02/26/Xshell+Xftp%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -277,12 +271,11 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="hexo-github个人博客的搭建"><a href="#hexo-github个人博客的搭建" class="headerlink" title="hexo+github个人博客的搭建"></a>hexo+github个人博客的搭建</h1><p>参考博客 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/189fd945f38f">https://www.jianshu.com/p/189fd945f38f</a></p>
-<p>采用的是ayer的主题，还挺好看嘿嘿嘿</p>
-<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>其实搭建博客挺简单的，就是init初始化一下然后选好模板设置好_config.yml再推送到github上面去，在推送的时候我还搞忘了ssh的密钥，重新设置了一下。但是hexo+github的模式最大的问题就是会被一些DNS拦截掉，导致无法访问我的个人博客，看来路还很长还需要学习。</p>
-<p>其实我最满意的还是我选的BGM ヽ(✿ﾟ▽ﾟ)ノ</p>
-<p>先定个小目标，坚持把博客写到大学毕业</p>
- 
+  <h1 id="hexo-github个人博客的搭建"><a href="#hexo-github个人博客的搭建" class="headerlink" title="hexo+github个人博客的搭建"></a>hexo+github个人博客的搭建</h1> 
+      <a class="article-more-link" href="/2021/02/26/hexo+github%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -398,8 +391,11 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="2021-02-03"><a href="#2021-02-03" class="headerlink" title="2021.02.03"></a>2021.02.03</h1><p>祝某只猪生日快乐，永远十八岁</p>
- 
+  <h1 id="2021-02-03"><a href="#2021-02-03" class="headerlink" title="2021.02.03"></a>2021.02.03</h1> 
+      <a class="article-more-link" href="/2021/01/18/2021-02-03/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>

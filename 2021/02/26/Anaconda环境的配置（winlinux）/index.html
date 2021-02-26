@@ -88,7 +88,9 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Anaconda环境的配置（win-linux）"><a href="#Anaconda环境的配置（win-linux）" class="headerlink" title="Anaconda环境的配置（win/linux）"></a>Anaconda环境的配置（win/linux）</h1><h5 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h5><p>在过去的时间里我都是使用python+pycharm的模式，使用pip来管理包，但是随着学习的深入逐渐发现了该模式的缺陷，python版本和包太多很难使用env和pip同时管理，所以就开始转战anaconda，我之前是装的有conda的，但是总感觉缺了点什么，就准备卸载重新装，于是就使用了conda自带的uninstall，结果神奇的事件出现了，无法卸载，无论试几次都不能正常，所以我就使用了硬核的方法，用文件粉碎强行删除了那个文件夹，然后就是我灰溜溜的到处删除配置，比如环境变量。</p>
+  <h1 id="Anaconda环境的配置（win-linux）"><a href="#Anaconda环境的配置（win-linux）" class="headerlink" title="Anaconda环境的配置（win/linux）"></a>Anaconda环境的配置（win/linux）</h1><a id="more"></a>
+
+<h5 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h5><p>在过去的时间里我都是使用python+pycharm的模式，使用pip来管理包，但是随着学习的深入逐渐发现了该模式的缺陷，python版本和包太多很难使用env和pip同时管理，所以就开始转战anaconda，我之前是装的有conda的，但是总感觉缺了点什么，就准备卸载重新装，于是就使用了conda自带的uninstall，结果神奇的事件出现了，无法卸载，无论试几次都不能正常，所以我就使用了硬核的方法，用文件粉碎强行删除了那个文件夹，然后就是我灰溜溜的到处删除配置，比如环境变量。</p>
 <p>在windows下安装conda倒是没什么难度，反正就是记着别选安装程序里的Add to PATH（我严重怀疑我之前的问题就是因为之前安装的时候勾选了这个），然后需要配置三个环境变量，一个anaconda自己的，一个Library里面的bin的，还有一个就是bin目录下的。跟着别人的教程走倒也不是难。最后启动图形化界面anaconda-navigator后面那半个单词我敲错了好多遍哦（需要着重注意）。</p>
 <h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><p>采取和pycharm一样的思路，现在win下载好安装包再发到虚拟机上，但是这次出现了新的问题</p>
 <p>第一： 记得选择X86的版本，别选另外一个</p>
