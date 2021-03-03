@@ -79,7 +79,7 @@
   <script>
     try {
       var typed = new Typed("#subtitle", {
-        strings: ['为天地立心,为生民立命,为往圣继绝学,为万世开太平', '', ''],
+        strings: ['一曲肝肠寸断，一生所爱随缘', '', ''],
         startDelay: 0,
         typeSpeed: 200,
         loop: true,
@@ -133,6 +133,62 @@
     
     
     
+    
+    <article
+  id="post-C语言中fun1()和fun2(void)的区别"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E4%B8%ADfun1()%E5%92%8Cfun2(void)%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2021-03-03T09:35:51.605Z" itemprop="datePublished">2021-03-03</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="C语言中fun1-和fun2-void-的区别"><a href="#C语言中fun1-和fun2-void-的区别" class="headerlink" title="C语言中fun1()和fun2(void)的区别"></a>C语言中fun1()和fun2(void)的区别</h1><!--main-->
+
+<p>在一次C语言实训中我发现老师在对无参函数的书写中写成fun2(void)的形式，这引起了我的好奇心，我只知道fun()和fun2(void)一个是不带参一个是带参，后者是C99中规定的，void的意思就是该函数不接受任何参数，但是我在使用的过程中除了对fun2传参会导致报错以外没有发现别的问题，所以就开始好奇为什么老师在实训时会特意在没有传参的函数里写上void。</p>
+<p>经过谷歌搜索得到以下结论</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(C) The difference between int main() and int main(void)</span><br><span class="line"></span><br><span class="line">A common misconception for C programmers, is to assume that a function prototyped as follows takes no arguments:</span><br><span class="line"></span><br><span class="line">int foo();</span><br><span class="line"></span><br><span class="line">In fact, this function is deemed to take an unknown number of arguments. Using the keyword void within the brackets is the correct way to tell the compiler that the function takes NO arguments.</span><br></pre></td></tr></table></figure>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://faq.cprogramming.com/cgi-bin/smartfaq.cgi?answer=1044841143&amp;id=1043284376">https://faq.cprogramming.com/cgi-bin/smartfaq.cgi?answer=1044841143&amp;id=1043284376</a></p>
+<p>但是我还是不能理解到底为什么要这样定义，最后在抖音的一个博主（抖抖代码）那里得到了解答</p>
+<p>以下是博主演示的代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line">    fun1();</span><br><span class="line">    fun2();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;doudou \n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;douodu 2\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">得到输出为：</span></span><br><span class="line"><span class="comment">doudou </span></span><br><span class="line"><span class="comment">douodu 2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>在没有传入任何参数的情况下两者都是被正常运行的。</p>
+<p>但是如果对fun1和fun2分别进行传参，其结果如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fun1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line">    fun1(<span class="number">888</span>,<span class="number">999</span>);</span><br><span class="line">    <span class="comment">// fun2();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;doudou \n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;douodu 2\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出为</span></span><br><span class="line"><span class="comment">//doudou</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line">    <span class="comment">// fun1(888,999);</span></span><br><span class="line">    fun2(<span class="number">888</span>,<span class="number">999</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;doudou \n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;douodu 2\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出为</span></span><br><span class="line"><span class="comment">test.c:20:5: error: too many arguments to function &#x27;fun2&#x27;</span></span><br><span class="line"><span class="comment">     fun2(888,999);</span></span><br><span class="line"><span class="comment">     ^~~~</span></span><br><span class="line"><span class="comment">test.c:18:10: note: declared here</span></span><br><span class="line"><span class="comment">     void fun2(void);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>由此得出，在对fun1()和fun2(void)传参时，fun2会直接报错中断程序的运行。如果不含参的函数不带void并进行传参的话，表面上不会有任何影响，但是在Linux或者Unix平台中函数的参数会被推入堆栈中，所以只要读取参数所推入的寄存器便可获得传入的参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>;</span><br><span class="line">    fun1(<span class="number">888</span>, <span class="number">999</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">register</span> <span class="keyword">int</span> sp1 <span class="title">asm</span><span class="params">(<span class="string">&quot;di&quot;</span>)</span></span>; <span class="comment">//关联第一个参数</span></span><br><span class="line">    <span class="function"><span class="keyword">register</span> <span class="keyword">int</span> sp2 <span class="title">asm</span><span class="params">(<span class="string">&quot;si&quot;</span>)</span></span>; <span class="comment">//关联第二个参数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,%d&quot;</span>, sp1, sp2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://i.loli.net/2021/03/03/2dtjoHvBhzeZPTf.png" alt="0210303171256.png"></p>
+<p><img src="https://i.loli.net/2021/03/03/NfcLC1ePS38iVUx.png" alt="20210303171808.png"></p>
+<p>研究这个问题花费了我三个小时，三个小时的时间也许可以让我学完一种特性或者几个语法糖，但是对这个小细节的求解却让我乐在其中。编程的魅力让我无法自拔。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
     
     <article
   id="post-Anaconda环境的配置（winlinux）"
