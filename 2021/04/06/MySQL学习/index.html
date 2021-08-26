@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     宿醉的个人博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-MySQL学习"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/04/06/MySQL%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2021-04-06T07:46:24.214Z" itemprop="datePublished">2021-04-06</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">17 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="MySQL-学习"><a href="#MySQL-学习" class="headerlink" title="MySQL 学习"></a>MySQL 学习</h1><a id="more"></a>
+
+<h2 id="第一次项目"><a href="#第一次项目" class="headerlink" title="第一次项目"></a>第一次项目</h2><h3 id="安装-mysql-出现的问题："><a href="#安装-mysql-出现的问题：" class="headerlink" title="安装 mysql 出现的问题："></a>安装 mysql 出现的问题：</h3><h4 id="①-未安装"><a href="#①-未安装" class="headerlink" title="① 未安装"></a>① 未安装</h4><p>解决办法：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<h4 id="②-安装失败"><a href="#②-安装失败" class="headerlink" title="② 安装失败"></a>② 安装失败</h4><p>多半是因为卸载 mysql 时没有卸载干净导致无法重新安装</p>
+<p>解决办法：</p>
+<p>通过 mysql installer 界面的 remove 进行卸载，之后再重新安装即可。</p>
+<p><img src="https://www.hualigs.cn/image/606c134b9d6b2.jpg"></p>
+<h4 id="③-未配置环境变量"><a href="#③-未配置环境变量" class="headerlink" title="③ 未配置环境变量"></a>③ 未配置环境变量</h4><p><img src="https://www.hualigs.cn/image/606c142c1562d.jpg"></p>
+<p>出现该情况则需要配置环境变量。</p>
+<p>默认的 mysql 安装路径为：C:\Program Files\MySQL\MySQL Server 5.6\bin，复制之后右键我的电脑（不能是快捷方式）属性，高级系统设置-&gt;环境变量。</p>
+<p><img src="https://www.hualigs.cn/image/606c14f81c332.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/606c152c1ce99.jpg"></p>
+<p>将复制的 mysql 路径添加到 path 中（windows 系统下的用户变量和系统变量差别不是很大）</p>
+<p><img src="https://www.hualigs.cn/image/606c155da2101.jpg"></p>
+<p>之后打开终端，在其中输入 mysql -uroot -p 之后输入密码得到如下界面便配置成功。</p>
+<p><img src="https://www.hualigs.cn/image/606c15e603e00.jpg"></p>
+<h4 id="④-忘记密码"><a href="#④-忘记密码" class="headerlink" title="④ 忘记密码"></a>④ 忘记密码</h4><p>解决办法一：</p>
+<p>因为之前我们使用 ssm 项目连接过数据库，所以只需要打开上学期的 java 实训项目，找到/src/main/resources/db.properties,里面的 jdbc 就含有用户名和数据库密码。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2021/04/805b6e37dceaa2bb.png"></p>
+<p>如果上学期的 ssm 项目删除了，就看办法二。</p>
+<p>办法二：</p>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<p>或者</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weidong_y/article/details/80493743">https://blog.csdn.net/weidong_y/article/details/80493743</a></p>
+<h3 id="课后作业-employee-表"><a href="#课后作业-employee-表" class="headerlink" title="课后作业 employee 表"></a>课后作业 employee 表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &#96;employee&#96;(</span><br><span class="line">    &#96;empno&#96; BIGINT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    &#96;ename&#96; VARCHAR(20),</span><br><span class="line">    &#96;job&#96;VARCHAR(20),</span><br><span class="line">    &#96;mgr&#96;BIGINT,</span><br><span class="line">    &#96;hiredate&#96;DATE,</span><br><span class="line">    &#96;sai&#96;DOUBLE(10,2),</span><br><span class="line">    &#96;COMM&#96;DOUBLE(10,2),</span><br><span class="line">    &#96;deptno&#96;INT</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1001,&#39;甘宁&#39;,&#39;文员&#39;,1013,&#39;2000-12-17&#39;,8000.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1002,&#39;黛绮丝&#39;,&#39;销售员&#39;,1006,&#39;2001-02-20&#39;,16000.00,3000.00,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1003,&#39;殷天正&#39;,&#39;销售员&#39;,1006,&#39;2001-02-20&#39;,12500.00,5000.00,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1004,&#39;刘备&#39;,&#39;经理&#39;,1009,&#39;2001-04-02&#39;,29750.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1005,&#39;谢逊&#39;,&#39;销售员&#39;,1006,&#39;2001-09-28&#39;,12500.00,14000.00,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1006,&#39;关羽&#39;,&#39;经理&#39;,1009,&#39;2001-05-01&#39;,28500.00,NULL,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1007,&#39;张飞&#39;,&#39;经理&#39;,1004,&#39;2007-04-19&#39;,30000.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1008,&#39;诸葛亮&#39;,&#39;分析师&#39;,1004,&#39;2007-04-19&#39;,30000.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1009,&#39;曾阿牛&#39;,&#39;董事长&#39;,NULL,&#39;2001-11-17&#39;,50000.00,NULL,10);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1010,&#39;韦一笑&#39;,&#39;销售员&#39;,1006,&#39;2001-09-08&#39;,15000.00,0.00,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1011,&#39;周泰&#39;,&#39;文员&#39;,1008,&#39;2007-05-23&#39;,11000.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1012,&#39;程普&#39;,&#39;文员&#39;,1006,&#39;2001-12-03&#39;,9500.00,NULL,30);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1013,&#39;庞统&#39;,&#39;分析师&#39;,1004,&#39;2001-12-03&#39;,30000.00,NULL,20);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1014,&#39;黄盖&#39;,&#39;文员&#39;,1007,&#39;2002-01-23&#39;,13000.00,NULL,10);</span><br><span class="line">INSERT INTO &#96;employee&#96; VALUES(1015,&#39;张三&#39;,&#39;保洁员&#39;,1001,&#39;2013-05-01&#39;,80000.00,50000.00,50);</span><br></pre></td></tr></table></figure>
+<p><strong>完成下列的查询题目：</strong></p>
+<ol>
+<li>查询出部门编号为 30 的所有员工</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE deptno &#x3D; 30;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>所有销售员的姓名、编号和部门编号。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT empno,ename,deptno FROM &#96;employee&#96;;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>找出奖金高于工资的员工。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE COMM&gt;sai;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>找出奖金高于工资 60%的员工。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE COMM&gt;sai*0.6;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>找出部门编号为 10 中所有经理，和部门编号为 20 中所有销售员的详细资料。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE deptno&#x3D;10 AND job&#x3D;&#39;经理&#39; OR deptno&#x3D;20 AND job&#x3D;&#39;销售员&#39;;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>找出部门编号为 10 中所有经理，部门编号为 20 中所有销售员，还有即不是经理又不是销售员但其工资大或等于 20000 的所有员工详细资料。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE deptno&#x3D;10 AND job&#x3D;&#39;经理&#39; OR deptno&#x3D;20 AND job&#x3D;&#39;销售员&#39; OR job !&#x3D;&#39;经理&#39; AND job !&#x3D; &#39;销售员&#39; AND sai &gt;&#x3D; 20000 ;</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>无奖金或奖金低于 1000 的员工。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE COMM is NULL OR COMM &lt; 1000;</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>查询名字由三个字组成的员工。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE ename LIKE &#39;___&#39;;</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>查询 2000 年入职的员工。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; WHERE hiredate LIKE &#39;2000%&#39;;</span><br></pre></td></tr></table></figure>
+<ol start="10">
+<li>查询所有员工详细信息，用编号升序排序</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; ORDER BY empno ASC;</span><br></pre></td></tr></table></figure>
+<ol start="11">
+<li>查询所有员工详细信息，用工资降序排序，如果工资相同使用入职日期升序排序</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;employee&#96; ORDER BY sai DESC, hiredate ASC;</span><br></pre></td></tr></table></figure>
+<h2 id="第二次项目"><a href="#第二次项目" class="headerlink" title="第二次项目"></a>第二次项目</h2><h3 id="课堂练习"><a href="#课堂练习" class="headerlink" title="课堂练习"></a>课堂练习</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">sno varchar(20) not null primary key,</span><br><span class="line">sname varchar(20) not null,</span><br><span class="line">ssex varchar(20) not null,</span><br><span class="line">sbirthday datetime,</span><br><span class="line">class varchar(20)</span><br><span class="line">);</span><br><span class="line">create table teacher</span><br><span class="line">(</span><br><span class="line">tno varchar(20) not null primary key,</span><br><span class="line">tname varchar(20) not null,</span><br><span class="line">tsex varchar(20) not null,</span><br><span class="line">tbirthday datetime,</span><br><span class="line">prof varchar(20),</span><br><span class="line">depart varchar(20) not null</span><br><span class="line">);</span><br><span class="line">create table course</span><br><span class="line">(</span><br><span class="line">cno varchar(20) not null primary key,</span><br><span class="line">cname varchar(20) not null,</span><br><span class="line">tno varchar(20) not null,</span><br><span class="line">foreign key(tno) references teacher(tno)</span><br><span class="line">);</span><br><span class="line">create table score</span><br><span class="line">(</span><br><span class="line">sno varchar(20),</span><br><span class="line">foreign key(sno) references student(sno),</span><br><span class="line">cno varchar(20) not null,</span><br><span class="line">foreign key(cno) references course(cno),</span><br><span class="line">degree decimal</span><br><span class="line">);</span><br><span class="line">insert into student values(&#39;108&#39;,&#39;曾华&#39;,&#39;男&#39;,&#39;1977-09-01&#39;,&#39;95033&#39;);</span><br><span class="line">insert into student values(&#39;105&#39;,&#39;匡明&#39;,&#39;男&#39;,&#39;1975-10-02&#39;,&#39;95031&#39;);</span><br><span class="line">insert into student values(&#39;107&#39;,&#39;王丽&#39;,&#39;女&#39;,&#39;1976-01-23&#39;,&#39;95033&#39;);</span><br><span class="line">insert into student values(&#39;101&#39;,&#39;李军&#39;,&#39;男&#39;,&#39;1976-02-20&#39;,&#39;95033&#39;);</span><br><span class="line">insert into student values(&#39;109&#39;,&#39;王芳&#39;,&#39;女&#39;,&#39;1975-02-10&#39;,&#39;95031&#39;);</span><br><span class="line">insert into student values(&#39;103&#39;,&#39;陆君&#39;,&#39;男&#39;,&#39;1974-06-03&#39;,&#39;95031&#39;);</span><br><span class="line">insert into teacher values(&#39;804&#39;,&#39;李诚&#39;,&#39;男&#39;,&#39;1958-12-02&#39;,&#39;副教授&#39;,&#39;计算机系&#39;);</span><br><span class="line">insert into teacher values(&#39;856&#39;,&#39;张旭&#39;,&#39;男&#39;,&#39;1969-03-12&#39;,&#39;讲师&#39;,&#39;电子工程系&#39;);</span><br><span class="line">insert into teacher values(&#39;825&#39;,&#39;王萍&#39;,&#39;女&#39;,&#39;1972-05-05&#39;,&#39;助教&#39;,&#39;计算机系&#39;);</span><br><span class="line">insert into teacher values(&#39;831&#39;,&#39;刘冰&#39;,&#39;女&#39;,&#39;1977-08-14&#39;,&#39;助教&#39;,&#39;电子工程系&#39;);</span><br><span class="line">insert into course values(&#39;3-105&#39;,&#39;计算机导论&#39;,&#39;825&#39;);</span><br><span class="line">insert into course values(&#39;3-245&#39;,&#39;操作系统&#39;,&#39;804&#39;);</span><br><span class="line">insert into course values(&#39;6-166&#39;,&#39;数字电路&#39;,&#39;856&#39;);</span><br><span class="line">insert into course values(&#39;9-888&#39;,&#39;高等数学&#39;,&#39;831&#39;);</span><br><span class="line">insert into score values(&#39;103&#39;,&#39;3-245&#39;,&#39;86&#39;);</span><br><span class="line">insert into score values(&#39;105&#39;,&#39;3-245&#39;,&#39;75&#39;);</span><br><span class="line">insert into score values(&#39;109&#39;,&#39;3-245&#39;,&#39;68&#39;);</span><br><span class="line">insert into score values(&#39;103&#39;,&#39;3-105&#39;,&#39;92&#39;);</span><br><span class="line">insert into score values(&#39;105&#39;,&#39;3-105&#39;,&#39;88&#39;);</span><br><span class="line">insert into score values(&#39;109&#39;,&#39;3-105&#39;,&#39;76&#39;);</span><br><span class="line">insert into score values(&#39;103&#39;,&#39;6-166&#39;,&#39;85&#39;);</span><br><span class="line">insert into score values(&#39;105&#39;,&#39;6-166&#39;,&#39;79&#39;);</span><br><span class="line">insert into score values(&#39;109&#39;,&#39;6-166&#39;,&#39;81&#39;);</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">-- 1、 查询 Student 表中的所有记录的 Sname、Ssex 和 Class 列。</span><br><span class="line">SELECT Sname,Ssex,Class FROM &#96;student&#96;;</span><br><span class="line">-- 2、 查询教师所有的单位即不重复的 Depart 列。</span><br><span class="line">SELECT DISTINCT Depart FROM &#96;teacher&#96;;</span><br><span class="line">-- 3、 查询 Student 表的所有记录。</span><br><span class="line">SELECT * FROM &#96;student&#96;;</span><br><span class="line">-- 4、 查询 Score 表中成绩在 60 到 80 之间的所有记录。</span><br><span class="line">SELECT * FROM score WHERE degree BETWEEN 60 AND 80;</span><br><span class="line">-- 5、 查询 Score 表中成绩为 85，86 或 88 的记录。</span><br><span class="line">SELECT * FROM score WHERE degree&#x3D;85 OR degree&#x3D;86 OR degree&#x3D;88;</span><br><span class="line">-- 6、 查询 Student 表中“95031”班或性别为“女”的同学记录。</span><br><span class="line">SELECT * FROM student WHERE class&#x3D;&#39;95031&#39; OR ssex&#x3D;&#39;女&#39;;</span><br><span class="line">-- 7、 以 Class 降序查询 Student 表的所有记录。</span><br><span class="line">SELECT * FROM student ORDER BY class DESC;</span><br><span class="line">-- 8、 以 Cno 升序、Degree 降序查询 Score 表的所有记录。</span><br><span class="line">SELECT * FROM score ORDER BY cno ASC, degree DESC;</span><br><span class="line">-- 9、 查询“95031”班的学生人数。</span><br><span class="line">SELECT * FROM student WHERE class&#x3D;&#39;95031&#39;;</span><br><span class="line">-- 10、查询 Score 表中的最高分的学生学号和课程号。（子查询或者排序）</span><br><span class="line">SELECT sno,cno,MAX(degree) FROM score;</span><br><span class="line">-- 11、查询每门课的平均成绩。</span><br><span class="line">SELECT cno,AVG(Degree) FROM Score GROUP BY cno;</span><br><span class="line">-- 12、查询 Score 表中至少有 5 名学生选修的并以 3 开头的课程的平均分数。</span><br><span class="line">SELECT AVG(degree) FROM score WHERE cno LIKE &#39;3%&#39; GROUP BY cno HAVING COUNT(sno)&gt;4;</span><br><span class="line">-- 13、查询分数大于 70，小于 90 的 Sno 列。</span><br><span class="line">SELECT * FROM score WHERE degree BETWEEN 70 AND 90;</span><br><span class="line">-- 14、查询所有学生的 Sname、Cno 和 Degree 列。</span><br><span class="line">SELECT sname,cno,degree FROM student JOIN score ON student.sno&#x3D;score.sno;</span><br><span class="line">-- 15、查询所有学生的 Sno、Cname 和 Degree 列。</span><br><span class="line">SELECT sno,cname,degree FROM score JOIN course ON score.cno&#x3D;course.cno;</span><br><span class="line">-- 16、查询所有学生的 Sname、Cname 和 Degree 列。</span><br><span class="line">SELECT sname,cname,degree FROM student JOIN score ON student.sno&#x3D;score.sno JOIN course ON course.cno&#x3D;score.cno;</span><br><span class="line">-- 17、查询“95033”班学生的平均分。</span><br><span class="line">SELECT AVG(degree) FROM score WHERE sno IN (SELECT sno FROM student WHERE class&#x3D;&#39;95033&#39;);</span><br><span class="line">-- 18、查询选修“3-105”课程的成绩高于“109”号同学成绩的所有同学的记录。</span><br><span class="line">SELECT * FROM student,score WHERE score.cno&#x3D;&#39;3-105&#39; AND student.sno&#x3D;score.sno AND score.degree&gt;(SELECT degree FROM score WHERE cno&#x3D;&#39;3-105&#39; AND sno&#x3D;&#39;109&#39;);</span><br><span class="line">-- 19、查询成绩高于学号为“109”、课程号为“3-105”的成绩的所有记录。</span><br><span class="line">SELECT * FROM student,score WHERE student.sno&#x3D;score.sno AND score.degree&gt;(SELECT degree FROM score WHERE cno&#x3D;&#39;3-105&#39; AND sno&#x3D;&#39;109&#39;);</span><br><span class="line">-- 20、查询和学号为 108、101 的同学同年出生的所有学生的 Sno、Sname 和 Sbirthday 列。</span><br><span class="line">SELECT sno,sname,sbirthday FROM student WHERE YEAR(student.sbirthday) IN (SELECT YEAR(sbirthday)FROM student WHERE sno&#x3D;&#39;108&#39;OR sno&#x3D;&#39;101&#39;);</span><br><span class="line">-- 21、查询“张旭“教师任课的学生成绩。</span><br><span class="line">SELECT sno,cno,degree FROM score WHERE cno IN (SELECT cno FROM course WHERE tno IN(SELECT tno FROM teacher WHERE tname&#x3D;&#39;张旭&#39;));</span><br><span class="line">-- 22、查询选修某课程的同学人数多于 5 人的教师姓名。</span><br><span class="line">SELECT tname FROM teacher WHERE tno IN (SELECT tno FROM course WHERE cno IN (SELECT cno FROM score GROUP BY cno HAVING COUNT(*)&gt;5));</span><br><span class="line">-- 23、查询 95033 班和 95031 班全体学生的记录。</span><br><span class="line">SELECT * FROM student WHERE class&#x3D;&#39;95033&#39; OR class&#x3D;&#39;95031&#39;;</span><br><span class="line">-- 24、查询存在有 85 分以上成绩的课程 Cno。</span><br><span class="line">SELECT DISTINCT cno FROM score WHERE degree&gt;85;</span><br><span class="line">-- 25、查询出“计算机系“教师所教课程的成绩表。</span><br><span class="line">SELECT sno,cno,degree FROM score WHERE cno IN(SELECT cno FROM course WHERE tno IN (SELECT tno FROM teacher WHERE depart&#x3D;&#39;计算机系&#39;));</span><br><span class="line">-- 26、查询“计算 机系”与“电子工程系“不同职称的教师的 Tname 和 Prof。</span><br><span class="line">SELECT tname,prof FROM teacher WHERE depart&#x3D;&#39;电子工程系&#39; AND prof NOT IN(SELECT prof FROM teacher WHERE depart&#x3D;&#39;计算机系&#39;);</span><br><span class="line">-- 27、查询选修编号为“3-105“课程且成绩至少高于选修编号为“3-245”的同学的 Cno、Sno和 Degree,并按 Degree 从高到低次序排序。</span><br><span class="line">SELECT cno,sno,degree FROM score AS one WHERE(SELECT degree FROM score as two WHERE cno&#x3D;&#39;3-105&#39; AND one.sno&#x3D;two.sno)&gt;(SELECT degree FROM score three WHERE cno&#x3D;&#39;3-245&#39; AND three.sno&#x3D;one.sno);</span><br><span class="line">-- 29、查询所有教师和同学的 name、sex 和 birthday。</span><br><span class="line">SELECT DISTINCT tname,tsex,tbirthday FROM teacher;</span><br><span class="line">-- 30、查询成绩比该课程平均成绩低的同学的成绩表。</span><br><span class="line">SELECT sno,cno,degree FROM score A WHERE A.degree&lt;(SELECT AVG(degree) FROM score B WHERE A.cno&#x3D;B.cno);</span><br><span class="line">-- 31、查询所有任课教师的 Tname 和 Depart。</span><br><span class="line">SELECT tname,depart FROM teacher WHERE tname IN (SELECT DISTINCT tname FROM teacher, course, score WHERE teacher.tno&#x3D;course.tno AND course.cno&#x3D;score.cno);</span><br><span class="line">-- 32、查询所有未讲课的教师的 Tname 和 Depart。</span><br><span class="line">SELECT tname,depart FROM teacher WHERE tname NOT IN (SELECT DISTINCT tname FROM teacher,course,score WHERE teacher.tno&#x3D;course.tno AND course.cno&#x3D;score.cno);</span><br><span class="line">-- 33、查询至少有 2 名男生的班号。</span><br><span class="line">SELECT class FROM student WHERE ssex&#x3D;&#39;男&#39; GROUP BY class HAVING COUNT(*)&gt;1;</span><br><span class="line">-- 34、查询 Student 表中不姓“王”的同学记录。</span><br><span class="line">SELECT * FROM student WHERE sname NOT LIKE(&#39;王%&#39;);</span><br><span class="line">-- 35、查询 Student 表中每个学生的姓名和年龄。</span><br><span class="line">SELECT sname,TIMESTAMPDIFF(YEAR,sbirthday,NOW()) AS &#39;年龄&#39; FROM student;</span><br><span class="line">-- 36、查询 Student 表中最大和最小的 Sbirthday 日期值。</span><br><span class="line">SELECT MAX(sbirthday), MIN(sbirthday) FROM student;</span><br><span class="line">-- 37、以班号和年龄从大到小的顺序查询 Student 表中的全部记录。</span><br><span class="line">SELECT * FROM student ORDER BY class DESC,sbirthday ASC;</span><br><span class="line">-- 38、查询“男”教师及其所上的课程。</span><br><span class="line">SELECT tname,cname FROM teacher,course WHERE tsex&#x3D;&#39;男&#39; AND teacher.tno&#x3D;course.tno;</span><br><span class="line">-- 39、查询最高分同学的 Sno、Cno 和 Degree 列。</span><br><span class="line">SELECT sno,cno,degree FROM score WHERE degree&#x3D;(SELECT MAX(degree)FROM score);</span><br><span class="line">-- 40、查询和“李军”同性别的所有同学的 Sname。</span><br><span class="line">SELECT sname FROM student WHERE ssex&#x3D;(SELECT ssex FROM student WHERE sname&#x3D;&#39;李军&#39;) AND sname NOT IN (&#39;李军&#39;);</span><br><span class="line">-- 41、查询和“李军”同性别并同班的同学 Sname。</span><br><span class="line">SELECT sname FROM student WHERE ssex&#x3D;(SELECT ssex FROM student WHERE sname&#x3D;&#39;李军&#39;)AND sname NOT IN (&#39;李军&#39;) AND class&#x3D;(SELECT class FROM student WHERE sname&#x3D;&#39;李军&#39;);</span><br><span class="line">-- 42、查询所有选修“计算机导论”课程的“男”同学的成绩表。</span><br><span class="line">SELECT sno,degree FROM score WHERE sno IN (SELECT sno FROM student WHERE ssex&#x3D;&#39;男&#39;) AND cno IN (SELECT cno FROM course WHERE</span><br><span class="line">cname&#x3D;&#39;计算机导论&#39;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="项目练习"><a href="#项目练习" class="headerlink" title="项目练习"></a>项目练习</h3><p>项目模型</p>
+<p><img src="https://www.hualigs.cn/image/60818d8caa12b.jpg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS  &#96;borrowing&#96;,&#96;student&#96;,&#96;admin&#96;,&#96;book&#96;,&#96;bookcase&#96;;</span><br><span class="line">CREATE TABLE &#96;student&#96; (</span><br><span class="line">&#96;sid&#96; int(20) NOT NULL,</span><br><span class="line">&#96;sname&#96; varchar(20) NULL,</span><br><span class="line">&#96;class&#96; varchar(20) NULL,</span><br><span class="line">&#96;tel&#96; varchar(20) NULL,</span><br><span class="line">PRIMARY KEY (&#96;sid&#96;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS &#96;admin&#96;;</span><br><span class="line">CREATE TABLE &#96;admin&#96; (</span><br><span class="line">&#96;adminid&#96; int(20) NOT NULL,</span><br><span class="line">&#96;adminiName&#96; varchar(20) NOT NULL,</span><br><span class="line">&#96;adminTel&#96; varchar(20) CHARACTER SET utf8 NOT NULL,</span><br><span class="line">PRIMARY KEY (&#96;adminid&#96;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS &#96;book&#96;;</span><br><span class="line">CREATE TABLE &#96;book&#96; (</span><br><span class="line">&#96;bookid&#96; int  NOT NULL,</span><br><span class="line">&#96;bname&#96; varchar(20) NOT NULL,</span><br><span class="line">&#96;bauthor&#96; varchar(20) CHARACTER SET utf8 NOT NULL,</span><br><span class="line">PRIMARY KEY (&#96;bookid&#96;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS &#96;borrowing&#96;;</span><br><span class="line">CREATE TABLE &#96;borrowing&#96; (</span><br><span class="line">&#96;borrowid&#96; int(20) NOT NULL,</span><br><span class="line">&#96;b_sid&#96; int(20) NOT NULL,</span><br><span class="line">&#96;b_aid&#96; int(20) NULL,</span><br><span class="line">&#96;backDate&#96; date NOT NULL,</span><br><span class="line">&#96;borrowDate&#96; datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">&#96;borrowBook&#96; int(20) NOT NULL,</span><br><span class="line">PRIMARY KEY (&#96;borrowid&#96;),</span><br><span class="line">FOREIGN KEY (&#96;b_sid&#96;) REFERENCES &#96;student&#96;(sid),</span><br><span class="line">FOREIGN KEY (&#96;b_aid&#96;) REFERENCES &#96;admin&#96;(adminid),</span><br><span class="line">FOREIGN KEY (&#96;borrowBook&#96;) REFERENCES &#96;book&#96;(bookid)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS &#96;bookcase&#96;;</span><br><span class="line">CREATE TABLE &#96;bookcase&#96; (</span><br><span class="line">&#96;bookcaseid&#96; int  NOT NULL,</span><br><span class="line">&#96;bcbook&#96; int(20) NOT NULL,</span><br><span class="line">PRIMARY KEY (&#96;bookcaseid&#96;),</span><br><span class="line">FOREIGN KEY (&#96;bcbook&#96;) REFERENCES &#96;book&#96;(bookid)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/04/06/MySQL%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/04/20/MySQL%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/24/%E6%96%87%E6%91%98/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">国士无双</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>
