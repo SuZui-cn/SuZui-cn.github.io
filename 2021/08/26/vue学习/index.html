@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">484</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -88,7 +88,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Vue学习"><a href="#Vue学习" class="headerlink" title="Vue学习"></a>Vue学习</h1><a id="more"></a>
+  <h1 id="VUE课堂笔记"><a href="#VUE课堂笔记" class="headerlink" title="VUE课堂笔记"></a>VUE课堂笔记</h1><a id="more"></a>
 
 <h2 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h2><p>前端工程化指的是：在企业级的前端项目开发中，把前端开发所需的工具、技术、流程、经验等进行规范化、标准化。</p>
 <h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>webpack是前端项目工程化的具体解决方案。</p>
@@ -115,12 +115,82 @@
 </li>
 <li><p>自定义打包的入口与出口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在webpack.config.js配置文件中，通过entry节点指定打包的入口。通过output节点指定打包的出口。</span><br><span class="line">代码如下：</span><br><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">	entry:path.join(__dirname,&#39;.&#x2F;src&#x2F;index.js&#39;),</span><br><span class="line">	filename:&#39;bundle.js&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="CLASS01"><a href="#CLASS01" class="headerlink" title="CLASS01"></a>CLASS01</h2></li>
+</ol>
+<h3 id="ES6学习"><a href="#ES6学习" class="headerlink" title="ES6学习"></a>ES6学习</h3><h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><p>只会提升变量的声明，不会提升变量的赋值</p>
+<p>函数则会提升函数体</p>
+<p><img src="https://img-blog.csdnimg.cn/c8f3eef5e63e430aa8eadb36d9017ad5.png#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="对象的定义"><a href="#对象的定义" class="headerlink" title="对象的定义"></a>对象的定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var person &#x3D; &#123;</span><br><span class="line">	name &#x3D; &quot;靓仔&quot;,</span><br><span class="line">	age &#x3D; 21,</span><br><span class="line">	say()&#123;</span><br><span class="line">		靓仔你好！</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="指针指向"><a href="#指针指向" class="headerlink" title="指针指向"></a>指针指向</h4><p>普通函数调用则指向全局对象window</p>
+<p>对象函数则指向对象</p>
+<h4 id="var、let与const关键字"><a href="#var、let与const关键字" class="headerlink" title="var、let与const关键字"></a>var、let与const关键字</h4><p>var是定义全局变量，拥有变量提升的特性</p>
+<p>let是定义局部变量，不存在变量提升，存在暂时性死区特性</p>
+<p>const是定义常量且具有块级作用域，赋值之后无法改变，对于复杂数据类型来说，虽然不能重新赋值，但是可以更改内部的值</p>
+<p>区别：</p>
+<ol>
+<li><p>变量的作用域范围不同；</p>
+</li>
+<li><p>使用var声明的变量存在变量提升；</p>
+</li>
+<li><p>使用var和let声明的变量可以更改变量的值，使用const声明的变量不能更改其值。</p>
 </li>
 </ol>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装vue3（通过npm）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue&#x2F;cli</span><br></pre></td></tr></table></figure>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p>解构表示对数据结构进行分解，赋值是指将某一数值赋给变量的过程；即按照一一对应的方式，从数组或者对象中提取值，然后将提取的值赋给变量。</p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数以小括号开头，在小括号中可以放置参数，小括号后面要跟上箭头（=&gt;），箭头后面要写一个大括号来表示函数体，这是箭头函数的固定语法，通常会把箭头函数赋值给一个变量，变量名就是函数名，然后通过变量名进行调用。</p>
+<p>箭头函数中的this关键字</p>
+<ol>
+<li><p>在ES6之前，JavaScript中的this关键字指向的对象是在运行时基于函数的执行环境绑定的，在全局函数中，this关键字指向的是window；当函数被作为某个对象的方法调用时，this指向的是那个对象。</p>
+</li>
+<li><p>在ES6中，箭头函数不绑定this关键字，它没有自己的this关键字，如果在箭头函数中使用this关键字，那么this指向的是箭头函数定义位置的上下文，即箭头函数在哪，this就指向谁</p>
+</li>
+</ol>
+<h3 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h3><h4 id="内容渲染"><a href="#内容渲染" class="headerlink" title="内容渲染"></a>内容渲染</h4><ul>
+<li><p>v-text</p>
+<p>v-text 指令会覆盖元素内默认的值。</p>
+</li>
+<li><p>插值表达式</p>
+</li>
+<li><p>v-html</p>
+<p>渲染html标签</p>
+</li>
+</ul>
+<h4 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h4><ul>
+<li><p>v-bind</p>
+<p>可简写为:</p>
+</li>
+</ul>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><ul>
+<li><p>v-on</p>
+<ul>
+<li><p>通过v-on 绑定的事件处理函数，需要在methods 节点中进行声明</p>
+</li>
+<li><p>可简写为@</p>
+</li>
+<li><p>在原生的DOM 事件绑定中，可以在事件处理函数的形参处，接收事件参数对象event。同理，在v-on 指令（简写为@ ）所绑定的事件处理函数中，同样可以接收到事件参数对象event。</p>
+</li>
+<li><p>$event 是vue 提供的特殊变量，用来表示原生的事件参数对象event。$event 可以解决事件参数对象event 被覆盖的问题。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h4><ul>
+<li>v-model</li>
+</ul>
+<h4 id="条件绑定"><a href="#条件绑定" class="headerlink" title="条件绑定"></a>条件绑定</h4><ul>
+<li><p>v-if</p>
+<p>动态地创建或移除DOM 元素，从而控制元素在页面上的显示与隐藏；</p>
+</li>
+<li><p>v-show</p>
+<p>会动态为元素添加或移除style=”display: none;” 样式，从而控制元素的显示与隐藏</p>
+</li>
+<li><p>v-if有更高的切换开销，而v-show有更高的初始渲染开销。因此：如果需要非常频繁地切换，则使用v-show 较好，如果在运行时条件很少改变，则使用v-if 较好</p>
+</li>
+</ul>
+<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h4><ul>
+<li>v-for</li>
+</ul>
+<h4 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h4><p>复习html+css</p>
+<p>背10个单词</p>
  
       <!-- reward -->
       
