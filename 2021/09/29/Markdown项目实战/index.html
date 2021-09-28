@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     宿醉的个人博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Markdown项目实战"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/09/29/Markdown%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" class="article-date">
+  <time datetime="2021-09-28T17:12:13.959Z" itemprop="datePublished">2021-09-29</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">16 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Markdown项目实战"><a href="#Markdown项目实战" class="headerlink" title="Markdown项目实战"></a>Markdown项目实战</h1><p>vue案例</p>
+<a id="more"></a>
+
+<p>学习建议：给出html、css以及vue结构，然后补全vue内部代码。</p>
+<p>项目结构：</p>
+<p><img src="https://img-blog.csdnimg.cn/d262cc3cea1a464eb2ce4c2b1363217f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>vue对象结构</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局过滤器</span></span><br><span class="line">Vue.filter()</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//计算属性</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 实时预览</span></span><br><span class="line">    <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//收藏排序</span></span><br><span class="line">    <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//统计行数</span></span><br><span class="line">    <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">	<span class="comment">//统计字符数</span></span><br><span class="line">    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//侦听器</span></span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="comment">//侦听content的数据</span></span><br><span class="line">    <span class="function"><span class="title">content</span>(<span class="params">val, oldVal</span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    notes: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">selectedId</span>(<span class="params">val</span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//方法</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">reportOperation</span>(<span class="params">opName</span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">selectNote</span>(<span class="params">note</span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">saveNotes</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">favoriteNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>index.html（注释详细请仔细阅读）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- head是头标签，&lt;title&gt;标签、&lt;meta&gt;标签、连接外部文件的&lt;link&gt;标签都放在这里 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 设置字符编码 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 连接谷歌图像库，体现在后面的收藏、添加等小图标 --&gt;</span></span><br><span class="line">    &lt;link</span><br><span class="line">      href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><br><span class="line">      rel=&quot;stylesheet&quot;</span><br><span class="line">    /&gt;</span><br><span class="line">    <span class="comment">&lt;!-- 浏览器上方的标题 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>practice_2<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 连接自己的css文件，href的内容为css所在的路径，“./”表示当前路径，“/”表示根目录，“../”表示上级目录，“../../”表示上上一级目录 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./main/css.css&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- body主要放页面核心标签和js代码 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 先导入一些js文件，均给出CDN和本地文件的方式(选其一即可) --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里用CDN的方式引入vue文件，只有导入了vue.js文件才能使用vue的功能--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里用本地文件的形式引入vue文件 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script src=&quot;../vue.js&quot;&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里导入项目需要的一些库，moment.js是用来管理时间的库，具体使用在显示创建时间，marked.js主要用于将文本转换为markdown格式，学习markdown建议参考：https://www.runoob.com/markdown/md-tutorial.html ，因为书上给出的是这两个库的CDN，而这两个库都是在外网，所以每次打开的时候都会加载很久，因此建议把这两个库下载下来然后使用本地引入的方式--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script src=&quot;https://unpkg.com/marked&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src=&quot;https://unpkg.com/moment&quot;&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./main/moment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./main/marked.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- id为note的盒子是项目的主体，主要用于vue对象的绑定（el挂载） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;notebook&quot;</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- id为side-bar的aside标签所包裹的内容为项目的最左侧的侧边栏 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;side-bar&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- class为toolbar的是侧边栏最上方有添加笔记按钮的那一部分 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- @click=&quot;addNote&quot;的意思是绑定vue对象中methods里面的addNote方法了，后面的:title是样式绑定，后面引号内部的+号是字符串拼接，notes.length返回的是vue对象里data中的notes数组的长度--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;addNote&quot;</span> <span class="attr">:title</span>=<span class="string">&quot;&#x27;已有&#x27;+notes.length + &#x27;条笔记&#x27; &quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里对应最开始引入的谷歌图标库，其中的class命名以及&lt;i&gt;标签中的add都是固定的 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>add<span class="tag">&lt;/<span class="name">i</span>&gt;</span> 添加笔记</span><br><span class="line">          <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- class为notes的盒子是侧边栏中的显示笔记列表的部分 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;notes&quot;</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 这里是笔记列表 --&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 这里使用了v-for=&quot;note of sortedNotes&quot;遍历了vue对象中从浏览器内存里加载出来的笔记数组，@click=&quot;selectNote(note)&quot;是是否选中该笔记，如果选中的话就将该笔记传入selected方法中， :class=&quot;&#123;selected:note === selectedNote&#125;&quot;这里是用于增加选中笔记的背景变色属性的--&gt;</span></span><br><span class="line">          &lt;div</span><br><span class="line">            class=&quot;note&quot;</span><br><span class="line">            v-for=&quot;note of sortedNotes&quot;</span><br><span class="line">            @click=&quot;selectNote(note)&quot;</span><br><span class="line">            :class=&quot;&#123;selected:note === selectedNote&#125;&quot;</span><br><span class="line">          &gt;</span><br><span class="line">            <span class="comment">&lt;!-- 这里的&lt;i&gt;标签也是使用了谷歌的图标库，包裹的star就是图标的名称，v-if用于判断该标签是否是收藏了的 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon material-icons&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;note.favorite&quot;</span>&gt;</span>star<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;&#123;note.title&#125;&#125;</span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 使用template是方便vue的管理，v-if是判断是否在侧边栏选中笔记，如果没有选中则不会在右边显示编辑框以及预览框，如果选中则会显示编辑框和预览框 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;selectedNote&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 主面板 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 工具栏 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里v-model是双向绑定了vue对象中选中笔记的标题，如果为空则显示未命名 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;未命名&quot;</span> /&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这个按钮绑定了favoriteNote方法，用于收藏笔记 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;favoriteNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;收藏笔记&quot;</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 下方谷歌的图标库，方法同上，不同的是采用了插值表达式以及条件表达式，如果selectedNote.favoriteNote为真，则内容为&#x27;star&#x27;；如果为假，则内容为&#x27;star_border&#x27; --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span></span></span><br><span class="line"><span class="tag">                &gt;</span>&#123;&#123;selectedNote.favoriteNote ? &#x27;star&#x27; : &#x27;star_border&#x27;&#125;&#125;&lt;/i</span><br><span class="line">              &gt;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里绑定了removeNote删除笔记方法 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeNote&quot;</span> <span class="attr">title</span>=<span class="string">&quot;删除&quot;</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 谷歌图像库 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;material-icons&quot;</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 这里双向绑定了selectedNote.content，也就是选中笔记的内容 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;selectedNote.content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 下方是编辑区域下方的状态栏 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toolbar status-bar&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 新的状态栏 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>创建时间：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 这里的&#123;&#123;selectedNote.created | date&#125;&#125;中selectedNote.created是选中笔记的创建时间，|符号后面date是vue对象的全局过滤器 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123;selectedNote.created | date&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里是统计行数的部分 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;lines&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>Lines<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 插值表达式，输出内容为vue对象中返回的行数linesCount --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123; linesCount &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 下方为我砍去的功能，原本是统计单词数，考虑到是中文输入所以该功能意义不大，因此砍去 --&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- &lt;span class=&quot;words&quot;&gt;</span></span><br><span class="line"><span class="comment">              &lt;span class=&quot;label&quot;&gt;Words&lt;/span&gt;</span></span><br><span class="line"><span class="comment">              &lt;span class=&quot;value&quot;&gt;&#123;&#123; wordsCount &#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="comment">            &lt;/span&gt; --&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 这里是统计字符数的部分 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;characters&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;label&quot;</span>&gt;</span>Characters<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 插值表达式，输出内容为vue对象中返回的字符数数charactersCount --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;value&quot;</span>&gt;</span>&#123;&#123; charactersCount &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 这里这一行是最右边预览的取余部分代码，v-html是将内容以html的格式渲染到界面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;notePreview&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里引入了我们写的包含创建vue对象的js文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./main/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过滤器:过滤时间格式</span></span><br><span class="line"><span class="comment">// 这里创建了一个全局过滤器，&#x27;date&#x27;是过滤器的名称，后面的是这个过滤器要做什么事，=&gt;是箭头函数，就是将剪头函数左边的作为参数传到右边然后获得返回值，这里的moment就是最开始导入的moment.js的功能，后面的.format是格式化，格式化的格式是（&#x27;YYYY/MM/DD, HH:mm&#x27;），Y表示年，M是月，D是日，H是小时，m是分，具体的格式就是 2021/09/28, 22:52这样的</span></span><br><span class="line">Vue.filter(<span class="string">&#x27;date&#x27;</span>, <span class="function">(<span class="params">time</span>) =&gt;</span> moment(time).format(<span class="string">&#x27;YYYY/MM/DD, HH:mm&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里创建了Vue对象，注意V是大写</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">//挂载，也就是绑定我们的vue代码生效的区域，这里绑定的是html中id为notebook的标签，(#为id，.为class)</span></span><br><span class="line">  el: <span class="string">&#x27;#notebook&#x27;</span>,</span><br><span class="line">  <span class="comment">// 这里是存放数据的地方，也就是html页面中v-model双向绑定的地方</span></span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// content: &quot;这是一个笔记本&quot;,</span></span><br><span class="line">      <span class="comment">//笔记数组</span></span><br><span class="line">      <span class="comment">//JSON.parse是用将json的格式解析为js对象 ，json学习网址：https://www.runoob.com/json/json-tutorial.html</span></span><br><span class="line">      <span class="comment">//localStorage.getItem(&#x27;notes&#x27;)是从浏览器的内存中取出上次保存的notes的数据，||表示或者为[]空数组</span></span><br><span class="line">      notes: <span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;notes&#x27;</span>)) || [],</span><br><span class="line">      <span class="comment">//这里是选中的笔记Id,localStorage.getItem(&#x27;selected-id&#x27;)是从内存中取出上次保存的选中笔记的ID 没有则为null，null可以理解为空</span></span><br><span class="line">      selectedId: <span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;selected-id&#x27;</span>) || <span class="literal">null</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 这里是计算属性，可以理解为一开始打开页面就会运行的部分，里面的都是自定义的方法</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">//这里是选中的笔记函数，返回值是从data() 中查找到的笔记id等于selectedId: localStorage.getItem(&#x27;selected-id&#x27;)上次选中的id的，this可以理解为就是在data()里面找，比如this.notes就是上面data()返回的notes。</span></span><br><span class="line">    <span class="function"><span class="title">selectedNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.notes.find(<span class="function">(<span class="params">note</span>) =&gt;</span> note.id === <span class="built_in">this</span>.selectedId);</span><br><span class="line">      <span class="comment">// return this.notes.find(note =&gt; note.id === this.selectedId) || &#x27;&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//这里是实时预览部分，也就是html最后面只有一行的预览部分所关联的函数</span></span><br><span class="line">    <span class="comment">//返回值是先用条件表达式判断，如果data()里选中笔记则使用导入的marked.js库渲染选中笔记的内容</span></span><br><span class="line">    <span class="function"><span class="title">notePreview</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote ? marked(<span class="built_in">this</span>.selectedNote.content) : <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//收藏排序这里是将data()中的notes笔记数组先用slice返回所有笔记，然后第一次sort排序是传入前后两个笔记（a和b）的创建时间进行排序，然后第二次sort是对收藏了的笔记进行排序，此处代码写的很优秀值得深思。</span></span><br><span class="line">    <span class="function"><span class="title">sortedNotes</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.notes</span><br><span class="line">        .slice()</span><br><span class="line">        .sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.created - b.created)</span><br><span class="line">        .sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> (a.favorite === b.favorite ? <span class="number">0</span> : a.favorite ? -<span class="number">1</span> : <span class="number">1</span>));</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//这里是统计行数的函数，主要原理是传入选中的笔记，然后再根据正则表达式进行切片然后判断其内容的长度</span></span><br><span class="line">    <span class="comment">//正则表达式学习地址：https://www.runoob.com/js/js-regexp.html</span></span><br><span class="line">    <span class="function"><span class="title">linesCount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote) &#123;</span><br><span class="line">        <span class="comment">// Count the number of new line characters</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="regexp">/\r\n|\r|\n/</span>).length;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">//被我砍去的单词统计函数，逻辑与行数统计差不多，但是稍微复杂一点</span></span><br><span class="line">    <span class="comment">// wordsCount()&#123;</span></span><br><span class="line">    <span class="comment">//   if(this.selectedNote)&#123;</span></span><br><span class="line">    <span class="comment">//     var s = this.selectedNote.content</span></span><br><span class="line">    <span class="comment">//     s=s.replace(/\n/g,&#x27; &#x27;)</span></span><br><span class="line">    <span class="comment">//     s = s.replace(/(^\s*)|(\s*$)/gi, &#x27;&#x27;)</span></span><br><span class="line">    <span class="comment">//     s = s.replace(/[ ]&#123;2,&#125;/gi, &#x27; &#x27;)</span></span><br><span class="line">    <span class="comment">//     return s.split(&#x27; &#x27;).length</span></span><br><span class="line">    <span class="comment">//   &#125;</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line">    <span class="comment">// 这里是统计字符数的函数，逻辑与统计行数的函数差不多</span></span><br><span class="line">    <span class="function"><span class="title">charactersCount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.selectedNote.content.split(<span class="string">&#x27;&#x27;</span>).length;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 这里是侦听器部分，可以理解为当侦听的部分发生变化时会做出相对应的变化</span></span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="comment">//侦听content的数据，localStorage.setItem(&#x27;content&#x27;, this.content);是以&#x27;content&#x27;为键，现在编辑的内容为值的形式存入浏览器内存。</span></span><br><span class="line">    <span class="function"><span class="title">content</span>(<span class="params">val, oldVal</span>)</span> &#123;</span><br><span class="line">      <span class="comment">// console.log(&#x27;新笔记：&#x27;, val, &quot;旧笔记:&quot;, oldVal)</span></span><br><span class="line">      <span class="comment">// console.log(&quot;保存笔记&quot;, this.content)</span></span><br><span class="line">      <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;content&#x27;</span>, <span class="built_in">this</span>.content);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//handle属于vue的高级特性，主要作用就是监听saveNotes的内容，deep表示是否开启深度监听，</span></span><br><span class="line">    <span class="comment">//深度监听vue是不能检测到对象属性的添加或删除，我们使用watch监听一个对象时，除非是直接重新给对象赋值，否则是不能监听到对象里的值的变化的，而开启深度监听后便可以今天对象内部值的变化</span></span><br><span class="line">    notes: &#123;</span><br><span class="line">      handler: <span class="string">&#x27;saveNotes&#x27;</span>,</span><br><span class="line">      deep: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里用于把选中笔记的ID存入内存当中，所以在每次打开页面的时候都会默认选中上一次选中的笔记</span></span><br><span class="line">    <span class="function"><span class="title">selectedId</span>(<span class="params">val</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;selected-id&#x27;</span>, val);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//以下都是自定义的方法</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// saveNote() &#123;</span></span><br><span class="line">    <span class="comment">//   // console.log(&quot;保存笔记&quot;, this.content)</span></span><br><span class="line">    <span class="comment">//   localStorage.setItem(&#x27;content&#x27;, this.content)</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line">    <span class="comment">//这里是个人编码习惯，传入进行的操作，在控制台打印操作完成，用于调试</span></span><br><span class="line">    <span class="function"><span class="title">reportOperation</span>(<span class="params">opName</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(opName, <span class="string">&#x27;操作完成&#x27;</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//添加笔记函数</span></span><br><span class="line">    <span class="function"><span class="title">addNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//这里获取了执行添加笔记函数的时间</span></span><br><span class="line">      <span class="keyword">const</span> time = <span class="built_in">Date</span>.now();</span><br><span class="line">      <span class="comment">//笔记的默认值</span></span><br><span class="line">      <span class="comment">//创建了一个笔记对象note，然后该对象拥有id（转型成为字符串的时间）、title（标题，后面跟的是获取该笔记是第几个笔记）、content（笔记的内容，默认为：&#x27;该笔记本采用**markdown**格式&#x27;）、created（创建的时间）、favorite（布尔型，true为收藏，false为未收藏）</span></span><br><span class="line">      <span class="keyword">const</span> note = &#123;</span><br><span class="line">        id: <span class="built_in">String</span>(time),</span><br><span class="line">        title: <span class="string">&#x27;新建笔记 &#x27;</span> + (<span class="built_in">this</span>.notes.length + <span class="number">1</span>),</span><br><span class="line">        content: <span class="string">&#x27;该笔记本采用**markdown**格式&#x27;</span>,</span><br><span class="line">        created: time,</span><br><span class="line">        favorite: <span class="literal">false</span>,</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//这里是将note对象添加到data()中的notes数组末尾</span></span><br><span class="line">      <span class="built_in">this</span>.notes.push(note);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//这里是选择笔记函数，传入选中的笔记对象，然后讲选中笔记的对象的id赋值给data()中的selectedId</span></span><br><span class="line">    <span class="function"><span class="title">selectNote</span>(<span class="params">note</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.selectedId = note.id;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//保存笔记函数</span></span><br><span class="line">    <span class="function"><span class="title">saveNotes</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//将笔记数组note转化为 JSON 字符串并以&#x27;notes&#x27;为键的方式存进内存</span></span><br><span class="line">      <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;notes&#x27;</span>, <span class="built_in">JSON</span>.stringify(<span class="built_in">this</span>.notes));</span><br><span class="line">      <span class="comment">// 这里在控制台打印一下信息，用作调试</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;保存成功&#x27;</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//删除笔记函数</span></span><br><span class="line">    <span class="function"><span class="title">removeNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//判断该笔记是否选中，并且用弹出框询问&#x27;是否删除该笔记？&#x27;，得到确定则进入函数体</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.selectedNote &amp;&amp; confirm(<span class="string">&#x27;是否删除该笔记？&#x27;</span>)) &#123;</span><br><span class="line">        <span class="comment">//先将笔记从列表中移除，先是获取了选中笔记的索引，然后判断索引是否存在</span></span><br><span class="line">        <span class="keyword">const</span> index = <span class="built_in">this</span>.notes.indexOf(<span class="built_in">this</span>.selectedNote);</span><br><span class="line">        <span class="keyword">if</span> (index !== -<span class="number">1</span>) &#123;</span><br><span class="line">          <span class="comment">//splice用于数组的删除，index表示删除元素的位置，1表示删除个数</span></span><br><span class="line">          <span class="built_in">this</span>.notes.splice(index, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//收藏笔记函数</span></span><br><span class="line">    <span class="function"><span class="title">favoriteNote</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//这里=后面有个!表示取反。</span></span><br><span class="line">      <span class="comment">// this.selectedNote.favorite= !this.selectedNote.favorite</span></span><br><span class="line">      <span class="comment">//此处写法十分巧妙，若不能理解则用上面的写法，^=是异或运算符：对变量和表达式执行按位异或，并将结果赋给该变量。相同为0，不同为1,true看做1,false看做0看，当参数为true时与给定的true做异或，也就是1^=1相同得0所以最后得到的是false，则将笔记取消收藏。如果传入的参数是false时，异或为0^=1，不同为1，则得到true，则将笔记设置为收藏。</span></span><br><span class="line">      <span class="built_in">this</span>.selectedNote.favorite ^= <span class="literal">true</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<p>css.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span>,</span><br><span class="line"><span class="selector-class">.notes</span>,</span><br><span class="line"><span class="selector-class">.preview</span> &#123;</span><br><span class="line">  <span class="comment">/* 如果中间的编辑特别的短这修改此处代码 */</span></span><br><span class="line">  <span class="attribute">flex</span>: auto <span class="number">1</span> <span class="number">1</span>;</span><br><span class="line">  <span class="comment">/* overflow: auto; */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">680px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/09/29/Markdown%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/09/21/ssm%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">国士无双</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>
