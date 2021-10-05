@@ -1,94 +1,275 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-
-
 <head>
-  <meta charset="utf-8" />
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>
-     宿醉的个人博客
-  </title>
-  <meta name="generator" content="hexo-theme-ayer">
-  
-  <link rel="shortcut icon" href="/favicon.ico" />
-  
-  
-<link rel="stylesheet" href="/dist/main.css">
 
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
 
-  
-<link rel="stylesheet" href="/css/custom.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="John Doe" />
 
-  
-  
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
-  
-  
 
-  
+<meta name="description" content="JavaWeb 学习笔记——参考资料：黑马程序员 JavaWeb 系列 涵盖内容：Junit测试、反射、注解、JDBC、连接池、Xml、Tomcat、Servlet、Filter、Listener、会话技术、Ajax、Json、Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宿醉的个人博客">
+<meta property="og:url" content="http://example.com/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="宿醉的个人博客">
+<meta property="og:description" content="JavaWeb 学习笔记——参考资料：黑马程序员 JavaWeb 系列 涵盖内容：Junit测试、反射、注解、JDBC、连接池、Xml、Tomcat、Servlet、Filter、Listener、会话技术、Ajax、Json、Redis">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-25T13:37:28.741Z">
+<meta property="article:modified_time" content="2021-09-06T00:56:40.794Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
 
-</head>
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
-</html>
 
+    <link rel="alternate" href="/atom.xml" title="宿醉的个人博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>宿醉的个人博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
 <body>
-  <div id="app">
-    
-      
-      <canvas width="1777" height="841"
-        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
-      
-    <main class="content on">
-      <section class="outer">
-  <article
-  id="post-JavaWeb学习笔记"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-JavaWeb学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-meta">
       <a href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2021-07-25T13:37:28.741Z" itemprop="datePublished">2021-07-25</time>
-</a>   
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">19k</span>
-        </span>
-    </span>
+      <time datetime="2021-07-25T13:37:28.741Z" itemprop="datePublished">2021-07-25</time>
+</a>
 
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">83 min</span>
-        </span>
-    </span>
-</div>
- 
+
     </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
     <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="JavaWeb-学习笔记"><a href="#JavaWeb-学习笔记" class="headerlink" title="JavaWeb 学习笔记"></a>JavaWeb 学习笔记</h1><p>——参考资料：黑马程序员 JavaWeb 系列</p>
+      
+          
+        <h1 id="JavaWeb-学习笔记"><a href="#JavaWeb-学习笔记" class="headerlink" title="JavaWeb 学习笔记"></a>JavaWeb 学习笔记</h1><p>——参考资料：黑马程序员 JavaWeb 系列</p>
 <p>涵盖内容：Junit测试、反射、注解、JDBC、连接池、Xml、Tomcat、Servlet、Filter、Listener、会话技术、Ajax、Json、Redis</p>
 <a id="more"></a>
 
@@ -144,522 +325,217 @@
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">1. 概念： ASynchronous JavaScript And XML	异步的JavaScript 和 XML</span><br><span class="line">	1. 异步和同步：客户端和服务器端相互通信的基础上</span><br><span class="line">		* 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</span><br><span class="line">		* 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</span><br><span class="line"></span><br><span class="line">		Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] </span><br><span class="line">		通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</span><br><span class="line">		传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</span><br><span class="line"></span><br><span class="line">		提升用户的体验</span><br><span class="line"></span><br><span class="line">2. 实现方式：</span><br><span class="line">	1. 原生的JS实现方式（了解）</span><br><span class="line">				 &#x2F;&#x2F;1.创建核心对象</span><br><span class="line">	            var xmlhttp;</span><br><span class="line">	            if (window.XMLHttpRequest)</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE7+, Firefox, Chrome, Opera, Safari</span><br><span class="line">	                xmlhttp&#x3D;new XMLHttpRequest();</span><br><span class="line">	            &#125;</span><br><span class="line">	            else</span><br><span class="line">	            &#123;&#x2F;&#x2F; code for IE6, IE5</span><br><span class="line">	                xmlhttp&#x3D;new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">	            &#125;</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;2. 建立连接</span><br><span class="line">	            &#x2F;*</span><br><span class="line">	                参数：</span><br><span class="line">	                    1. 请求方式：GET、POST</span><br><span class="line">	                        * get方式，请求参数在URL后边拼接。send方法为空参</span><br><span class="line">	                        * post方式，请求参数在send方法中定义</span><br><span class="line">	                    2. 请求的URL：</span><br><span class="line">	                    3. 同步或异步请求：true（异步）或 false（同步）</span><br><span class="line">	</span><br><span class="line">	             *&#x2F;</span><br><span class="line">	            xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username&#x3D;tom&quot;,true);</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;3.发送请求</span><br><span class="line">	            xmlhttp.send();</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;4.接受并处理来自服务器的响应结果</span><br><span class="line">	            &#x2F;&#x2F;获取方式 ：xmlhttp.responseText</span><br><span class="line">	            &#x2F;&#x2F;什么时候获取？当服务器响应成功后再获取</span><br><span class="line">	</span><br><span class="line">	            &#x2F;&#x2F;当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。</span><br><span class="line">	            xmlhttp.onreadystatechange&#x3D;function()</span><br><span class="line">	            &#123;</span><br><span class="line">	                &#x2F;&#x2F;判断readyState就绪状态是否为4，判断status响应状态码是否为200</span><br><span class="line">	                if (xmlhttp.readyState&#x3D;&#x3D;4 &amp;&amp; xmlhttp.status&#x3D;&#x3D;200)</span><br><span class="line">	                &#123;</span><br><span class="line">	                   &#x2F;&#x2F;获取服务器的响应结果</span><br><span class="line">	                    var responseText &#x3D; xmlhttp.responseText;</span><br><span class="line">	                    alert(responseText);</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	2. JQeury实现方式</span><br><span class="line">		1. $.ajax()</span><br><span class="line">			* 语法：$.ajax(&#123;键值对&#125;);</span><br><span class="line">			 &#x2F;&#x2F;使用$.ajax()发送异步请求</span><br><span class="line">	            $.ajax(&#123;</span><br><span class="line">	                url:&quot;ajaxServlet1111&quot; , &#x2F;&#x2F; 请求路径</span><br><span class="line">	                type:&quot;POST&quot; , &#x2F;&#x2F;请求方式</span><br><span class="line">	                &#x2F;&#x2F;data: &quot;username&#x3D;jack&amp;age&#x3D;23&quot;,&#x2F;&#x2F;请求参数</span><br><span class="line">	                data:&#123;&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23&#125;,</span><br><span class="line">	                success:function (data) &#123;</span><br><span class="line">	                    alert(data);</span><br><span class="line">	                &#125;,&#x2F;&#x2F;响应成功后的回调函数</span><br><span class="line">	                error:function () &#123;</span><br><span class="line">	                    alert(&quot;出错啦...&quot;)</span><br><span class="line">	                &#125;,&#x2F;&#x2F;表示如果请求响应出现错误，会执行的回调函数</span><br><span class="line">	</span><br><span class="line">	                dataType:&quot;text&quot;&#x2F;&#x2F;设置接受到的响应数据的格式</span><br><span class="line">	            &#125;);</span><br><span class="line">		2. $.get()：发送get请求</span><br><span class="line">			* 语法：$.get(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br><span class="line"></span><br><span class="line">		3. $.post()：发送post请求</span><br><span class="line">			* 语法：$.post(url, [data], [callback], [type])</span><br><span class="line">				* 参数：</span><br><span class="line">					* url：请求路径</span><br><span class="line">					* data：请求参数</span><br><span class="line">					* callback：回调函数</span><br><span class="line">					* type：响应结果的类型</span><br></pre></td></tr></table></figure>
 <h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">1. 概念： JavaScript Object Notation		JavaScript对象表示法</span><br><span class="line">	Person p &#x3D; new Person();</span><br><span class="line">	p.setName(&quot;张三&quot;);</span><br><span class="line">	p.setAge(23);</span><br><span class="line">	p.setGender(&quot;男&quot;);</span><br><span class="line"></span><br><span class="line">	var p &#x3D; &#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;&#125;;</span><br><span class="line"></span><br><span class="line">	* json现在多用于存储和交换文本信息的语法</span><br><span class="line">	* 进行数据的传输</span><br><span class="line">	* JSON 比 XML 更小、更快，更易解析。</span><br><span class="line"></span><br><span class="line">2. 语法：</span><br><span class="line">	1. 基本规则</span><br><span class="line">		* 数据在名称&#x2F;值对中：json数据是由键值对构成的</span><br><span class="line">			* 键用引号(单双都行)引起来，也可以不使用引号</span><br><span class="line">			* 值得取值类型：</span><br><span class="line">				1. 数字（整数或浮点数）</span><br><span class="line">				2. 字符串（在双引号中）</span><br><span class="line">				3. 逻辑值（true 或 false）</span><br><span class="line">				4. 数组（在方括号中）	&#123;&quot;persons&quot;:[&#123;&#125;,&#123;&#125;]&#125;</span><br><span class="line">				5. 对象（在花括号中） &#123;&quot;address&quot;:&#123;&quot;province&quot;：&quot;陕西&quot;....&#125;&#125;</span><br><span class="line">				6. null</span><br><span class="line">		* 数据由逗号分隔：多个键值对由逗号分隔</span><br><span class="line">		* 花括号保存对象：使用&#123;&#125;定义json 格式</span><br><span class="line">		* 方括号保存数组：[]</span><br><span class="line">	2. 获取数据:</span><br><span class="line">		1. json对象.键名</span><br><span class="line">		2. json对象[&quot;键名&quot;]</span><br><span class="line">		3. 数组对象[索引]</span><br><span class="line">		4. 遍历</span><br><span class="line">				 &#x2F;&#x2F;1.定义基本格式</span><br><span class="line">		        var person &#x3D; &#123;&quot;name&quot;: &quot;张三&quot;, age: 23, &#39;gender&#39;: true&#125;;</span><br><span class="line">		</span><br><span class="line">		        var ps &#x3D; [&#123;&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true&#125;,</span><br><span class="line">		            &#123;&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false&#125;];</span><br><span class="line">		        &#x2F;&#x2F;获取person对象中所有的键和值</span><br><span class="line">		        &#x2F;&#x2F;for in 循环</span><br><span class="line">		       &#x2F;* for(var key in person)&#123;</span><br><span class="line">		            &#x2F;&#x2F;这样的方式获取不行。因为相当于  person.&quot;name&quot;</span><br><span class="line">		            &#x2F;&#x2F;alert(key + &quot;:&quot; + person.key);</span><br><span class="line">		            alert(key+&quot;:&quot;+person[key]);</span><br><span class="line">		        &#125;*&#x2F;</span><br><span class="line">		</span><br><span class="line">		       &#x2F;&#x2F;获取ps中的所有值</span><br><span class="line">		        for (var i &#x3D; 0; i &lt; ps.length; i++) &#123;</span><br><span class="line">		            var p &#x3D; ps[i];</span><br><span class="line">		            for(var key in p)&#123;</span><br><span class="line">		                alert(key+&quot;:&quot;+p[key]);</span><br><span class="line">		            &#125;</span><br><span class="line">		        &#125;</span><br><span class="line">3. JSON数据和Java对象的相互转换</span><br><span class="line"></span><br><span class="line">	* JSON解析器：</span><br><span class="line">		* 常见的解析器：Jsonlib，Gson，fastjson，jackson</span><br><span class="line">	</span><br><span class="line">	1. JSON转为Java对象</span><br><span class="line">		1. 导入jackson的相关jar包</span><br><span class="line">		2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">		3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">			1. readValue(json字符串数据,Class)</span><br><span class="line">	2. Java对象转换JSON</span><br><span class="line">		1. 使用步骤：</span><br><span class="line">			1. 导入jackson的相关jar包</span><br><span class="line">			2. 创建Jackson核心对象 ObjectMapper</span><br><span class="line">			3. 调用ObjectMapper的相关方法进行转换</span><br><span class="line">				1. 转换方法：</span><br><span class="line">					* writeValue(参数1，obj):</span><br><span class="line">	                    参数1：</span><br><span class="line">	                        File：将obj对象转换为JSON字符串，并保存到指定的文件中</span><br><span class="line">	                        Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中</span><br><span class="line">	                        OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</span><br><span class="line">	                * writeValueAsString(obj):将对象转为json字符串</span><br><span class="line"></span><br><span class="line">				2. 注解：</span><br><span class="line">					1. @JsonIgnore：排除属性。</span><br><span class="line">					2. @JsonFormat：属性值得格式化</span><br><span class="line">						* @JsonFormat(pattern &#x3D; &quot;yyyy-MM-dd&quot;)</span><br><span class="line"></span><br><span class="line">				3. 复杂java对象转换</span><br><span class="line">					1. List：数组</span><br><span class="line">					2. Map：对象格式一致</span><br></pre></td></tr></table></figure>
 <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br></pre></td><td class="code"><pre><span class="line">1. 概念： redis是一款高性能的NOSQL系列的非关系型数据库</span><br><span class="line">	1.1.什么是NOSQL</span><br><span class="line">		NoSQL(NoSQL &#x3D; Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</span><br><span class="line">		随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</span><br><span class="line"></span><br><span class="line">		1.1.1.	NOSQL和关系型数据库比较</span><br><span class="line">			优点：</span><br><span class="line">				1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。</span><br><span class="line">				2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。</span><br><span class="line">				3）存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。</span><br><span class="line">				4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</span><br><span class="line"></span><br><span class="line">			缺点：</span><br><span class="line">				1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。</span><br><span class="line">				2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。</span><br><span class="line">				3）不提供关系型数据库对事务的处理。</span><br><span class="line"></span><br><span class="line">		1.1.2.	非关系型数据库的优势：</span><br><span class="line">			1）性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</span><br><span class="line">			2）可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</span><br><span class="line"></span><br><span class="line">		1.1.3.	关系型数据库的优势：</span><br><span class="line">			1）复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</span><br><span class="line">			2）事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</span><br><span class="line"></span><br><span class="line">		1.1.4.	总结</span><br><span class="line">			关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，</span><br><span class="line">			让NoSQL数据库对关系型数据库的不足进行弥补。</span><br><span class="line">			一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</span><br><span class="line"></span><br><span class="line">	1.2.主流的NOSQL产品</span><br><span class="line">		•	键值(Key-Value)存储数据库</span><br><span class="line">				相关产品： Tokyo Cabinet&#x2F;Tyrant、Redis、Voldemort、Berkeley DB</span><br><span class="line">				典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </span><br><span class="line">				数据模型： 一系列键值对</span><br><span class="line">				优势： 快速查询</span><br><span class="line">				劣势： 存储的数据缺少结构化</span><br><span class="line">		•	列存储数据库</span><br><span class="line">				相关产品：Cassandra, HBase, Riak</span><br><span class="line">				典型应用：分布式的文件系统</span><br><span class="line">				数据模型：以列簇式存储，将同一列数据存在一起</span><br><span class="line">				优势：查找速度快，可扩展性强，更容易进行分布式扩展</span><br><span class="line">				劣势：功能相对局限</span><br><span class="line">		•	文档型数据库</span><br><span class="line">				相关产品：CouchDB、MongoDB</span><br><span class="line">				典型应用：Web应用（与Key-Value类似，Value是结构化的）</span><br><span class="line">				数据模型： 一系列键值对</span><br><span class="line">				优势：数据结构要求不严格</span><br><span class="line">				劣势： 查询性能不高，而且缺乏统一的查询语法</span><br><span class="line">		•	图形(Graph)数据库</span><br><span class="line">				相关数据库：Neo4J、InfoGrid、Infinite Graph</span><br><span class="line">				典型应用：社交网络</span><br><span class="line">				数据模型：图结构</span><br><span class="line">				优势：利用图结构相关算法。</span><br><span class="line">				劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</span><br><span class="line">	1.3 什么是Redis</span><br><span class="line">		Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次&#x2F;s,写的速度是81000次&#x2F;s ，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：</span><br><span class="line">			1) 字符串类型 string</span><br><span class="line">			2) 哈希类型 hash</span><br><span class="line">			3) 列表类型 list</span><br><span class="line">			4) 集合类型 set</span><br><span class="line">			5) 有序集合类型 sortedset</span><br><span class="line">		1.3.1 redis的应用场景</span><br><span class="line">			•	缓存（数据查询、短连接、新闻内容、商品内容等等）</span><br><span class="line">			•	聊天室的在线好友列表</span><br><span class="line">			•	任务队列。（秒杀、抢购、12306等等）</span><br><span class="line">			•	应用排行榜</span><br><span class="line">			•	网站访问统计</span><br><span class="line">			•	数据过期处理（可以精确到毫秒</span><br><span class="line">			•	分布式集群架构中的session分离</span><br><span class="line">2. 下载安装</span><br><span class="line">	1. 官网：https:&#x2F;&#x2F;redis.io</span><br><span class="line">	2. 中文网：http:&#x2F;&#x2F;www.redis.net.cn&#x2F;</span><br><span class="line">	3. 解压直接可以使用：</span><br><span class="line">		* redis.windows.conf：配置文件</span><br><span class="line">		* redis-cli.exe：redis的客户端</span><br><span class="line">		* redis-server.exe：redis服务器端</span><br><span class="line">	</span><br><span class="line">3. 命令操作</span><br><span class="line">	1. redis的数据结构：</span><br><span class="line">		* redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构</span><br><span class="line">			* value的数据结构：</span><br><span class="line">				1) 字符串类型 string</span><br><span class="line">				2) 哈希类型 hash ： map格式  </span><br><span class="line">				3) 列表类型 list ： linkedlist格式。支持重复元素</span><br><span class="line">				4) 集合类型 set  ： 不允许重复元素</span><br><span class="line">				5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序</span><br><span class="line">	</span><br><span class="line">	2. 字符串类型 string</span><br><span class="line">		1. 存储： set key value</span><br><span class="line">			127.0.0.1:6379&gt; set username zhangsan</span><br><span class="line">			OK</span><br><span class="line">		2. 获取： get key</span><br><span class="line">			127.0.0.1:6379&gt; get username</span><br><span class="line">			&quot;zhangsan&quot;</span><br><span class="line">		3. 删除： del key</span><br><span class="line">			127.0.0.1:6379&gt; del age</span><br><span class="line">			(integer) 1</span><br><span class="line">	3. 哈希类型 hash</span><br><span class="line">		1. 存储： hset key field value</span><br><span class="line">			127.0.0.1:6379&gt; hset myhash username lisi</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; hset myhash password 123</span><br><span class="line">			(integer) 1</span><br><span class="line">		2. 获取： </span><br><span class="line">			* hget key field: 获取指定的field对应的值</span><br><span class="line">				127.0.0.1:6379&gt; hget myhash username</span><br><span class="line">				&quot;lisi&quot;</span><br><span class="line">			* hgetall key：获取所有的field和value</span><br><span class="line">				127.0.0.1:6379&gt; hgetall myhash</span><br><span class="line">				1) &quot;username&quot;</span><br><span class="line">				2) &quot;lisi&quot;</span><br><span class="line">				3) &quot;password&quot;</span><br><span class="line">				4) &quot;123&quot;</span><br><span class="line">				</span><br><span class="line">		3. 删除： hdel key field</span><br><span class="line">			127.0.0.1:6379&gt; hdel myhash username</span><br><span class="line">			(integer) 1</span><br><span class="line">	</span><br><span class="line">	4. 列表类型 list:可以添加一个元素到列表的头部（左边）或者尾部（右边）</span><br><span class="line">		1. 添加：</span><br><span class="line">			1. lpush key value: 将元素加入列表左表</span><br><span class="line">				</span><br><span class="line">			2. rpush key value：将元素加入列表右边</span><br><span class="line">				</span><br><span class="line">				127.0.0.1:6379&gt; lpush myList a</span><br><span class="line">				(integer) 1</span><br><span class="line">				127.0.0.1:6379&gt; lpush myList b</span><br><span class="line">				(integer) 2</span><br><span class="line">				127.0.0.1:6379&gt; rpush myList c</span><br><span class="line">				(integer) 3</span><br><span class="line">		2. 获取：</span><br><span class="line">			* lrange key start end ：范围获取</span><br><span class="line">				127.0.0.1:6379&gt; lrange myList 0 -1</span><br><span class="line">				1) &quot;b&quot;</span><br><span class="line">				2) &quot;a&quot;</span><br><span class="line">				3) &quot;c&quot;</span><br><span class="line">		3. 删除：</span><br><span class="line">			* lpop key： 删除列表最左边的元素，并将元素返回</span><br><span class="line">			* rpop key： 删除列表最右边的元素，并将元素返回</span><br><span class="line">	5. 集合类型 set ： 不允许重复元素</span><br><span class="line">		1. 存储：sadd key value</span><br><span class="line">			127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">			(integer) 0</span><br><span class="line">		2. 获取：smembers key:获取set集合中所有元素</span><br><span class="line">			127.0.0.1:6379&gt; smembers myset</span><br><span class="line">			1) &quot;a&quot;</span><br><span class="line">		3. 删除：srem key value:删除set集合中的某个元素	</span><br><span class="line">			127.0.0.1:6379&gt; srem myset a</span><br><span class="line">			(integer) 1</span><br><span class="line">	6. 有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</span><br><span class="line"></span><br><span class="line">		1. 存储：zadd key score value</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">			(integer) 1</span><br><span class="line">			127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">			(integer) 1</span><br><span class="line">		2. 获取：zrange key start end [withscores]</span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">			1) &quot;lisi&quot;</span><br><span class="line">			2) &quot;zhangsan&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line"></span><br><span class="line">			127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">			1) &quot;zhangsan&quot;</span><br><span class="line">			2) &quot;60&quot;</span><br><span class="line">			3) &quot;wangwu&quot;</span><br><span class="line">			4) &quot;80&quot;</span><br><span class="line">			5) &quot;lisi&quot;</span><br><span class="line">			6) &quot;500&quot;</span><br><span class="line">		3. 删除：zrem key value</span><br><span class="line">			127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">			(integer) 1</span><br><span class="line"></span><br><span class="line">	7. 通用命令</span><br><span class="line">		1. keys * : 查询所有的键</span><br><span class="line">		2. type key ： 获取键对应的value的类型</span><br><span class="line">		3. del key：删除指定的key value</span><br><span class="line">4. 持久化</span><br><span class="line">	1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</span><br><span class="line">	2. redis持久化机制：</span><br><span class="line">		1. RDB：默认方式，不需要进行配置，默认就使用这种机制</span><br><span class="line">			* 在一定的间隔时间中，检测key的变化情况，然后持久化数据</span><br><span class="line">			1. 编辑redis.windwos.conf文件</span><br><span class="line">				#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">				save 900 1</span><br><span class="line">				#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">				save 300 10</span><br><span class="line">				#   after 60 sec if at least 10000 keys changed</span><br><span class="line">				save 60 10000</span><br><span class="line">				</span><br><span class="line">			2. 重新启动redis服务器，并指定配置文件名称</span><br><span class="line">				D:\JavaWeb2018\day23_redis\资料\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf	</span><br><span class="line">			</span><br><span class="line">		2. AOF：日志记录的方式，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据</span><br><span class="line">			1. 编辑redis.windwos.conf文件</span><br><span class="line">				appendonly no（关闭aof） --&gt; appendonly yes （开启aof）</span><br><span class="line">				</span><br><span class="line">				# appendfsync always ： 每一次操作都进行持久化</span><br><span class="line">				appendfsync everysec ： 每隔一秒进行一次持久化</span><br><span class="line">				# appendfsync no	 ： 不进行持久化</span><br><span class="line"></span><br><span class="line">5. Java客户端 Jedis</span><br><span class="line">	* Jedis: 一款java操作redis数据库的工具.</span><br><span class="line">	* 使用步骤：</span><br><span class="line">		1. 下载jedis的jar包</span><br><span class="line">		2. 使用</span><br><span class="line">			&#x2F;&#x2F;1. 获取连接</span><br><span class="line">    		Jedis jedis &#x3D; new Jedis(&quot;localhost&quot;,6379);</span><br><span class="line">   			&#x2F;&#x2F;2. 操作</span><br><span class="line">   			jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);</span><br><span class="line">    		&#x2F;&#x2F;3. 关闭连接</span><br><span class="line">    		jedis.close();</span><br><span class="line">	* Jedis操作各种redis中的数据结构</span><br><span class="line">		1) 字符串类型 string</span><br><span class="line">			set</span><br><span class="line">			get</span><br><span class="line">			</span><br><span class="line">			 &#x2F;&#x2F;1. 获取连接</span><br><span class="line">	        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">	        &#x2F;&#x2F;2. 操作</span><br><span class="line">	        &#x2F;&#x2F;存储</span><br><span class="line">	        jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);</span><br><span class="line">	        &#x2F;&#x2F;获取</span><br><span class="line">	        String username &#x3D; jedis.get(&quot;username&quot;);</span><br><span class="line">	        System.out.println(username);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F;可以使用setex()方法存储可以指定过期时间的 key value</span><br><span class="line">	        jedis.setex(&quot;activecode&quot;,20,&quot;hehe&quot;);&#x2F;&#x2F;将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">	        jedis.close();</span><br><span class="line"></span><br><span class="line">		2) 哈希类型 hash ： map格式  </span><br><span class="line">			hset</span><br><span class="line">			hget</span><br><span class="line">			hgetAll</span><br><span class="line">			&#x2F;&#x2F;1. 获取连接</span><br><span class="line">	        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">	        &#x2F;&#x2F;2. 操作</span><br><span class="line">	        &#x2F;&#x2F; 存储hash</span><br><span class="line">	        jedis.hset(&quot;user&quot;,&quot;name&quot;,&quot;lisi&quot;);</span><br><span class="line">	        jedis.hset(&quot;user&quot;,&quot;age&quot;,&quot;23&quot;);</span><br><span class="line">	        jedis.hset(&quot;user&quot;,&quot;gender&quot;,&quot;female&quot;);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; 获取hash</span><br><span class="line">	        String name &#x3D; jedis.hget(&quot;user&quot;, &quot;name&quot;);</span><br><span class="line">	        System.out.println(name);</span><br><span class="line">	        &#x2F;&#x2F; 获取hash的所有map中的数据</span><br><span class="line">	        Map&lt;String, String&gt; user &#x3D; jedis.hgetAll(&quot;user&quot;);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; keyset</span><br><span class="line">	        Set&lt;String&gt; keySet &#x3D; user.keySet();</span><br><span class="line">	        for (String key : keySet) &#123;</span><br><span class="line">	            &#x2F;&#x2F;获取value</span><br><span class="line">	            String value &#x3D; user.get(key);</span><br><span class="line">	            System.out.println(key + &quot;:&quot; + value);</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">	        jedis.close();</span><br><span class="line">		3) 列表类型 list ： linkedlist格式。支持重复元素</span><br><span class="line">			lpush &#x2F; rpush</span><br><span class="line">			lpop &#x2F; rpop</span><br><span class="line">			lrange start end : 范围获取</span><br><span class="line">			</span><br><span class="line">			 &#x2F;&#x2F;1. 获取连接</span><br><span class="line">	        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">	        &#x2F;&#x2F;2. 操作</span><br><span class="line">	        &#x2F;&#x2F; list 存储</span><br><span class="line">	        jedis.lpush(&quot;mylist&quot;,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);&#x2F;&#x2F;从左边存</span><br><span class="line">	        jedis.rpush(&quot;mylist&quot;,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);&#x2F;&#x2F;从右边存</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; list 范围获取</span><br><span class="line">	        List&lt;String&gt; mylist &#x3D; jedis.lrange(&quot;mylist&quot;, 0, -1);</span><br><span class="line">	        System.out.println(mylist);</span><br><span class="line">	        </span><br><span class="line">	        &#x2F;&#x2F; list 弹出</span><br><span class="line">	        String element1 &#x3D; jedis.lpop(&quot;mylist&quot;);&#x2F;&#x2F;c</span><br><span class="line">	        System.out.println(element1);</span><br><span class="line">	</span><br><span class="line">	        String element2 &#x3D; jedis.rpop(&quot;mylist&quot;);&#x2F;&#x2F;c</span><br><span class="line">	        System.out.println(element2);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; list 范围获取</span><br><span class="line">	        List&lt;String&gt; mylist2 &#x3D; jedis.lrange(&quot;mylist&quot;, 0, -1);</span><br><span class="line">	        System.out.println(mylist2);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">	        jedis.close();</span><br><span class="line">		4) 集合类型 set  ： 不允许重复元素</span><br><span class="line">			sadd</span><br><span class="line">			smembers:获取所有元素</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;1. 获取连接</span><br><span class="line">	        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">	        &#x2F;&#x2F;2. 操作</span><br><span class="line">	        &#x2F;&#x2F; set 存储</span><br><span class="line">	        jedis.sadd(&quot;myset&quot;,&quot;java&quot;,&quot;php&quot;,&quot;c++&quot;);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; set 获取</span><br><span class="line">	        Set&lt;String&gt; myset &#x3D; jedis.smembers(&quot;myset&quot;);</span><br><span class="line">	        System.out.println(myset);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">	        jedis.close();</span><br><span class="line">		5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序</span><br><span class="line">			zadd</span><br><span class="line">			zrange</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;1. 获取连接</span><br><span class="line">	        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">	        &#x2F;&#x2F;2. 操作</span><br><span class="line">	        &#x2F;&#x2F; sortedset 存储</span><br><span class="line">	        jedis.zadd(&quot;mysortedset&quot;,3,&quot;亚瑟&quot;);</span><br><span class="line">	        jedis.zadd(&quot;mysortedset&quot;,30,&quot;后裔&quot;);</span><br><span class="line">	        jedis.zadd(&quot;mysortedset&quot;,55,&quot;孙悟空&quot;);</span><br><span class="line">	</span><br><span class="line">	        &#x2F;&#x2F; sortedset 获取</span><br><span class="line">	        Set&lt;String&gt; mysortedset &#x3D; jedis.zrange(&quot;mysortedset&quot;, 0, -1);</span><br><span class="line">	</span><br><span class="line">	        System.out.println(mysortedset);</span><br><span class="line">	        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">	        jedis.close();</span><br><span class="line">	* jedis连接池： JedisPool</span><br><span class="line">		* 使用：</span><br><span class="line">			1. 创建JedisPool连接池对象</span><br><span class="line">			2. 调用方法 getResource()方法获取Jedis连接</span><br><span class="line">				&#x2F;&#x2F;0.创建一个配置对象</span><br><span class="line">		        JedisPoolConfig config &#x3D; new JedisPoolConfig();</span><br><span class="line">		        config.setMaxTotal(50);</span><br><span class="line">		        config.setMaxIdle(10);</span><br><span class="line">		</span><br><span class="line">		        &#x2F;&#x2F;1.创建Jedis连接池对象</span><br><span class="line">		        JedisPool jedisPool &#x3D; new JedisPool(config,&quot;localhost&quot;,6379);</span><br><span class="line">		</span><br><span class="line">		        &#x2F;&#x2F;2.获取连接</span><br><span class="line">		        Jedis jedis &#x3D; jedisPool.getResource();</span><br><span class="line">		        &#x2F;&#x2F;3. 使用</span><br><span class="line">		        jedis.set(&quot;hehe&quot;,&quot;heihei&quot;);</span><br><span class="line">		        &#x2F;&#x2F;4. 关闭 归还到连接池中</span><br><span class="line">		        jedis.close();</span><br><span class="line">		</span><br><span class="line">		* 连接池工具类</span><br><span class="line">			public class JedisPoolUtils &#123;</span><br><span class="line"></span><br><span class="line">			    private static JedisPool jedisPool;</span><br><span class="line">			</span><br><span class="line">			    static&#123;</span><br><span class="line">			        &#x2F;&#x2F;读取配置文件</span><br><span class="line">			        InputStream is &#x3D; JedisPoolUtils.class.getClassLoader().getResourceAsStream(&quot;jedis.properties&quot;);</span><br><span class="line">			        &#x2F;&#x2F;创建Properties对象</span><br><span class="line">			        Properties pro &#x3D; new Properties();</span><br><span class="line">			        &#x2F;&#x2F;关联文件</span><br><span class="line">			        try &#123;</span><br><span class="line">			            pro.load(is);</span><br><span class="line">			        &#125; catch (IOException e) &#123;</span><br><span class="line">			            e.printStackTrace();</span><br><span class="line">			        &#125;</span><br><span class="line">			        &#x2F;&#x2F;获取数据，设置到JedisPoolConfig中</span><br><span class="line">			        JedisPoolConfig config &#x3D; new JedisPoolConfig();</span><br><span class="line">			        config.setMaxTotal(Integer.parseInt(pro.getProperty(&quot;maxTotal&quot;)));</span><br><span class="line">			        config.setMaxIdle(Integer.parseInt(pro.getProperty(&quot;maxIdle&quot;)));</span><br><span class="line">			</span><br><span class="line">			        &#x2F;&#x2F;初始化JedisPool</span><br><span class="line">			        jedisPool &#x3D; new JedisPool(config,pro.getProperty(&quot;host&quot;),Integer.parseInt(pro.getProperty(&quot;port&quot;)));</span><br><span class="line">			    &#125;  </span><br><span class="line">			    &#x2F;**</span><br><span class="line">			     * 获取连接方法</span><br><span class="line">			     *&#x2F;</span><br><span class="line">			    public static Jedis getJedis()&#123;</span><br><span class="line">			        return jedisPool.getResource();</span><br><span class="line">			    &#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
- 
-      <!-- reward -->
+
       
     </div>
     
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>Copyright： </strong>
-          
-          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
-          
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-    </footer>
   </div>
-
-   
-  <nav class="article-nav">
+  
     
-      <a href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title"></div>
-      </a>
-    
-  </nav>
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2021-07-25, 21:37:28</p>
+        <p><span>Updated:</span>2021-09-06, 08:56:40</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="">http://example.com/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
-   
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "",
-    app_key: "",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "给我的文章加点评论吧~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
 
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
 
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/">
+                    
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+                    
+                </a>
+            </div>
+        
+    </nav>
 
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
- 
-   
-     
+  
 </article>
 
-</section>
-      <footer class="footer">
-  <div class="outer">
-    <ul>
-      <li>
-        Copyrights &copy;
-        2021
-        <i class="ri-heart-fill heart_icon"></i> John Doe
-      </li>
-    </ul>
-    <ul>
-      <li>
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
         
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaWeb-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">JavaWeb 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit"><span class="toc-number">1.1.</span> <span class="toc-text">Junit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">1.2.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">1.4.</span> <span class="toc-text">JDBC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB-%EF%BC%9A-JDBCUtils"><span class="toc-number">1.4.1.</span> <span class="toc-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1%EF%BC%9A"><span class="toc-number">1.4.2.</span> <span class="toc-text">JDBC控制事务：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-number">1.5.</span> <span class="toc-text">数据库连接池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC-template"><span class="toc-number">1.5.1.</span> <span class="toc-text">JDBC template</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xml"><span class="toc-number">1.6.</span> <span class="toc-text">Xml</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dtd"><span class="toc-number">1.6.1.</span> <span class="toc-text">Dtd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Schema"><span class="toc-number">1.6.2.</span> <span class="toc-text">Schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90xml"><span class="toc-number">1.6.3.</span> <span class="toc-text">解析xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat"><span class="toc-number">1.7.</span> <span class="toc-text">Tomcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet"><span class="toc-number">1.8.</span> <span class="toc-text">Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Http"><span class="toc-number">1.8.1.</span> <span class="toc-text">Http</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Request"><span class="toc-number">1.8.2.</span> <span class="toc-text">Request</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Response"><span class="toc-number">1.8.3.</span> <span class="toc-text">Response</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ServletContext"><span class="toc-number">1.8.4.</span> <span class="toc-text">ServletContext</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF"><span class="toc-number">1.9.</span> <span class="toc-text">会话技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-number">1.9.1.</span> <span class="toc-text">Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session"><span class="toc-number">1.9.2.</span> <span class="toc-text">Session</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter"><span class="toc-number">1.10.</span> <span class="toc-text">Filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listener"><span class="toc-number">1.11.</span> <span class="toc-text">Listener</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax"><span class="toc-number">1.12.</span> <span class="toc-text">Ajax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Json"><span class="toc-number">1.13.</span> <span class="toc-text">Json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">1.14.</span> <span class="toc-text">Redis</span></a></li></ol></li></ol>
         
-        
-        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-        <span class="division">|</span>
-        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-        
-        <span>
-  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
-  <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
-</span>
-        
-      </li>
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
-        
-      </li>
-    </ul>
-  </div>
-</footer>
-      <div class="float_btns">
-        <div class="totop" id="totop">
-  <i class="ri-arrow-up-line"></i>
-</div>
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
 
-<div class="todark" id="todark">
-  <i class="ri-moon-line"></i>
-</div>
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
-      </div>
-    </main>
-    <aside class="sidebar on">
-      <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">国士无双</a>
-    </li>
-    
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-      <a class="nav-item-link nav-item-search"  title="Search">
-        <i class="ri-search-line"></i>
-      </a>
-      
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-    </aside>
     <script>
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelector('.content').classList.remove('on');
-        document.querySelector('.sidebar').classList.remove('on');
-      }
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
-    <div id="mask"></div>
 
-<!-- #reward -->
-<div id="reward">
-  <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
-  <div class="reward-box">
+
+
     
+<div class="share">
     
-  </div>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| 宿醉的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
 </div>
+
+
+
+
+
+
+
     
-<script src="/js/jquery-2.0.3.min.js"></script>
 
 
-<script src="/js/lazyload.min.js"></script>
-
-<!-- Tocbot -->
 
 
-<script src="/js/tocbot.min.js"></script>
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/" title="Pre: ">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
 
-<script>
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: 'main',
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto'
-  });
-</script>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-
-<script src="/dist/main.js"></script>
-
-<!-- ImageViewer -->
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
+        
+            <a href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" title="Next: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/09/29/Markdown%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">Markdown项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/09/21/ssm%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/">ssm项目配置文件模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/09/17/%E7%BB%9D%E9%A1%B6%E8%81%AA%E6%98%8E%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">绝顶聪明管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/26/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/">测试用例</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/26/vue%E5%AD%A6%E4%B9%A0/">vue学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/07/%E6%96%87%E5%AD%A6%E5%B8%B8%E8%AF%86/">文学常识</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/">古诗词集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JavaWeb学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">程序员常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/07/01/markdown%E5%AD%A6%E4%B9%A0/">markdown学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/22/%E5%9B%BD%E5%A3%AB%E6%97%A0%E5%8F%8C/">国士无双</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/java%E7%BB%83%E4%B9%A0/">java练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/13/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88java+mysql%EF%BC%89/">学生管理系统（java+mysql）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/20/MySQL%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/">MySQL问题集锦</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/06/MySQL%E5%AD%A6%E4%B9%A0/">MySQL学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/24/%E6%96%87%E6%91%98/">文摘</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/24/%E4%B8%89%E8%A7%82/">三观</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E4%B8%ADfun1()%E5%92%8Cfun2(void)%E7%9A%84%E5%8C%BA%E5%88%AB/">C语言中fun1()和fun2(void)的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/26/Anaconda%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%88winlinux%EF%BC%89/">Anaconda环境的配置（winlinux）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/26/Linux%E4%B8%8Bpycharm%E7%A0%B4%E8%A7%A3%E7%89%88%E7%9A%84%E5%AE%89%E8%A3%85/">Linux下pycharm破解版的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/26/Xshell+Xftp%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/">Xshell+Xftp管理服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/26/hexo+github%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/">hexo+github个人博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/23/Ubuntu%E4%B8%8B%E8%A7%82%E7%9C%8BB%E7%AB%99%E8%A7%86%E9%A2%91/">Ubuntu下观看B站视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/21/PIP%E5%88%87%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/">PIP切换镜像源</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/18/2021-02-03/">2021-02-03</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">我的第一篇个人博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2021 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
-
-<script>
-    function viewer_init() {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
-
-        $imgArr.forEach(($em, i) => {
-            $em.onclick = () => {
-                // slider展开状态
-                // todo: 这样不好，后面改成状态
-                if (document.querySelector('.left-col.show')) return
-                let items = []
-                $imgArr.forEach(($em2, i2) => {
-                    let img = $em2.getAttribute('data-idx', i2)
-                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-                    let title = $em2.getAttribute('alt')
-                    // 获得原图尺寸
-                    const image = new Image()
-                    image.src = src
-                    items.push({
-                        src: src,
-                        w: image.width || $em2.width,
-                        h: image.height || $em2.height,
-                        title: title
-                    })
-                })
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                    index: parseInt(i)
-                });
-                gallery.init()
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })
-    }
-    viewer_init()
-</script>
-
-<!-- MathJax -->
-
-<!-- Katex -->
-
-<!-- busuanzi  -->
-
-
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
-
-
-<!-- ClickLove -->
-
-<!-- ClickBoom1 -->
-
-<!-- ClickBoom2 -->
-
-
-<script src="/js/clickBoom2.js"></script>
-
-
-<!-- CodeCopy -->
-
-
-<link rel="stylesheet" href="/css/clipboard.css">
-
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-checkbox-circle-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-checkbox-circle-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-time-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-time-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
-
-
-<!-- CanvasBackground -->
-
-
-<script src="/js/dz.js"></script>
+    </script>
 
 
 
-    
-    <div id="music">
-    
-    
-    
-    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
-        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
-
-<style>
-    #music {
-        position: fixed;
-        right: 15px;
-        bottom: 0;
-        z-index: 998;
-    }
-</style>
+<script>
+    // Open in New Window
     
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
-
 </html>
