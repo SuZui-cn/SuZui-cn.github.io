@@ -272,12 +272,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <hr>
-<h2 id="tomcat403问题"><a href="#tomcat403问题" class="headerlink" title="tomcat403问题"></a>tomcat403问题</h2><h1 id="Tomcat403问题"><a href="#Tomcat403问题" class="headerlink" title="Tomcat403问题"></a>Tomcat403问题</h1><p>首先在conf/tomcat-users.xml文件里面，在</tomcat-users>前面添加如下代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">password</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后重启tomcat，重新访问manager app页面，如果此时仍然出现403 Access Denied错误，那么就是访问的ip地受到了限制，打开/webapps/manager/META-INF/目录下context.xml文件，不是conf/目录下的context.xml文件，一定不要搞错了</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.valves.RemoteAddrValve&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">allow</span>=<span class="string">&quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1|\d+\.\d+\.\d+\.\d+&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
+              <hr>
+<h2 id="tomcat403问题"><a href="#tomcat403问题" class="headerlink" title="tomcat403问题"></a>tomcat403问题</h2><h1 id="Tomcat403问题"><a href="#Tomcat403问题" class="headerlink" title="Tomcat403问题"></a>Tomcat403问题</h1>
+          
       
     </div>
     
@@ -286,6 +283,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2021/10/11/tomcat403%E9%97%AE%E9%A2%98/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
