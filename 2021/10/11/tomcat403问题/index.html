@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">153</span>
+            <span class="post-count">151</span>
         </span>
     </span>
 
@@ -88,8 +88,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <hr>
-<h2 id="tomcat403问题"><a href="#tomcat403问题" class="headerlink" title="tomcat403问题"></a>tomcat403问题</h2><h1 id="Tomcat403问题"><a href="#Tomcat403问题" class="headerlink" title="Tomcat403问题"></a>Tomcat403问题</h1><a id="more"></a>
+  <h1 id="Tomcat403问题"><a href="#Tomcat403问题" class="headerlink" title="Tomcat403问题"></a>Tomcat403问题</h1><a id="more"></a>
 
 <p>首先在conf/tomcat-users.xml文件里面，在</tomcat-users>前面添加如下代码：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">password</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
