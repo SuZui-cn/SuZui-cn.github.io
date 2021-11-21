@@ -45,506 +45,253 @@
         style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
       
     <main class="content on">
+      <section class="outer">
+  <article
+  id="post-安卓Service生命周期"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/21/%E5%AE%89%E5%8D%93Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2021-11-21T15:46:34.495Z" itemprop="datePublished">2021-11-21</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">874</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">3 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
       
-<section class="cover">
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Service的生命周期"><a href="#Service的生命周期" class="headerlink" title="Service的生命周期"></a>Service的生命周期</h1><a id="more"></a>
+
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fb44584daee3">https://www.jianshu.com/p/fb44584daee3</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lwbqqyumidi/p/3769113.html">https://www.cnblogs.com/lwbqqyumidi/p/3769113.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/70d7bfae18f3">https://www.jianshu.com/p/70d7bfae18f3</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/atree/archive/2010/12/10/android-thread.html">https://www.cnblogs.com/atree/archive/2010/12/10/android-thread.html</a></p>
+<p> Service与Activity一样，是Android的四大组件之一。Activity是看得见的，而Service则是看不见的。看得见的Activity一般承担显示界面、控制的功能，而Service则承担后台任务。而Service与线程的区别在于，Service是Android的四大组件之一，所以系统不会轻易将其杀死。服务可有其他应用组件启动，而且即使用户切换到其他应用，服务仍将在后台继续运行。此外，组件可以绑定到服务，以与之进行交互，甚至是执行进程间通信（IPC）。例如，服务可以处理网络事务、播放音乐、执行文件I/O或与内容提供程序交互，而所有这一切均可在后台进行。</p>
+<p><strong>服务基本上分为两种形式运行</strong>：<br>- <strong>启动</strong><br>当应用组件（如Activity）通过调用startService()启动服务时，服务即处于“启动”状态。一旦启动，服务即可在后台无限期运行，即使启动服务的组件已被销毁也不受影响。已启动的服务通常是执行单一操作，而且不会将结果返回给调用方。例如，它可能通过网络下载或上传文件。操作完成后，服务会自行停止运行。<br>- <strong>绑定</strong><br>当应用组件通过bindService()绑定到服务时，服务即处于“绑定”状态。绑定服务提供了一个客户端-服务器接口，允许组件与服务进行交互、发送请求、获取结果，甚至是利用进程间通信（IPC）跨进程执行这些操作。仅当与另一个应用组件绑定时，绑定服务才会运行。多个组件可以同时绑定到该服务，但全部取消绑定后，该服务即会被销毁。</p>
+<p><img src="https://img-blog.csdnimg.cn/50b09b75155843f7b3f60bc18b9ae3dc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>onStartCommand()<br>当另一个组件（如 Activity）通过调用 startService() 请求启动服务时，系统将调用此方法。一旦执行此方法，服务即会启动并可在后台无限期运行。 如果您实现此方法，则在服务工作完成后，需要由您通过调用 stopSelf() 或 stopService() 来停止服务。（如果您只想提供绑定，则无需实现此方法。）</p>
+<p>onBind()<br>当另一个组件想通过调用 bindService() 与服务绑定（例如执行 RPC）时，系统将调用此方法。在此方法的实现中，您必须通过返回 IBinder 提供一个接口，供客户端用来与服务进行通信。请务必实现此方法，但如果您并不希望允许绑定，则应返回 null。</p>
+<p>onCreate()<br>首次创建服务时，系统将调用此方法来执行一次性设置程序（在调用 onStartCommand() 或 onBind() 之前）。如果服务已在运行，则不会调用此方法。</p>
+<p>onDestroy()<br>当服务不再使用且将被销毁时，系统将调用此方法。服务应该实现此方法来清理所有资源，如线程、注册的侦听器、接收器等。 这是服务接收的最后一个调用。</p>
+<p><img src="https://img-blog.csdnimg.cn/34722d2ecfe34fe9b3f2c46c50411215.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<table>
+<thead>
+<tr>
+<th>手动调用方法</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>startService()</td>
+<td align="center">启动服务</td>
+</tr>
+<tr>
+<td>stopService()</td>
+<td align="center">关闭服务</td>
+</tr>
+<tr>
+<td>bindService()</td>
+<td align="center">绑定服务</td>
+</tr>
+<tr>
+<td>unbindService()</td>
+<td align="center">解绑服务</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>内部自动调用的方法</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onCreat()</td>
+<td align="center">创建服务</td>
+</tr>
+<tr>
+<td>onStartCommand()</td>
+<td align="center">开始服务</td>
+</tr>
+<tr>
+<td>onDestroy()</td>
+<td align="center">销毁服务</td>
+</tr>
+<tr>
+<td>onBind()</td>
+<td align="center">绑定服务</td>
+</tr>
+<tr>
+<td>onUnbind()</td>
+<td align="center">解绑服务</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
     
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
     </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">宿醉的个人博客</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
       </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['昨夜西风凋碧树，独上西楼，望尽天涯路。', '衣带渐宽终不悔，为伊消得人憔悴。', '众里寻她千百度，蓦然回首，那人却在灯火阑珊处。'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: false,
-        backSpeed: 200,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content">欢迎访问宿醉的博客</div>
 </div>
 
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-ssm项目配置文件模板"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/09/21/ssm%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/" class="article-date">
-  <time datetime="2021-09-21T07:40:29.697Z" itemprop="datePublished">2021-09-21</time>
-</a>    
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/11/21/%E5%AE%89%E5%8D%93Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" alt="微信分享二维码">
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="SSM项目配置文件模板"><a href="#SSM项目配置文件模板" class="headerlink" title="SSM项目配置文件模板"></a>SSM项目配置文件模板</h1> 
-      <a class="article-more-link" href="/2021/09/21/ssm%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
+</div>
 
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
+<div id="share-mask"></div>  
     </footer>
   </div>
 
+   
+  <nav class="article-nav">
     
- 
     
-</article>
-
+      <a href="/2021/11/21/%E5%AE%89%E5%8D%93Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
     
-    <article
-  id="post-绝顶聪明管理系统"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/09/17/%E7%BB%9D%E9%A1%B6%E8%81%AA%E6%98%8E%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time datetime="2021-09-17T10:26:06.213Z" itemprop="datePublished">2021-09-17</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="绝顶聪明2-0管理系统"><a href="#绝顶聪明2-0管理系统" class="headerlink" title="绝顶聪明2.0管理系统"></a>绝顶聪明2.0管理系统</h1><p>更新至注册登录</p> 
-      <a class="article-more-link" href="/2021/09/17/%E7%BB%9D%E9%A1%B6%E8%81%AA%E6%98%8E%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-vue学习"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/08/26/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2021-08-26T13:59:33.519Z" itemprop="datePublished">2021-08-26</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="VUE课堂笔记"><a href="#VUE课堂笔记" class="headerlink" title="VUE课堂笔记"></a>VUE课堂笔记</h1> 
-      <a class="article-more-link" href="/2021/08/26/vue%E5%AD%A6%E4%B9%A0/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-文学常识"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/08/07/%E6%96%87%E5%AD%A6%E5%B8%B8%E8%AF%86/" class="article-date">
-  <time datetime="2021-08-07T14:15:17.477Z" itemprop="datePublished">2021-08-07</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="中华文学常识"><a href="#中华文学常识" class="headerlink" title="中华文学常识"></a>中华文学常识</h1> 
-      <a class="article-more-link" href="/2021/08/07/%E6%96%87%E5%AD%A6%E5%B8%B8%E8%AF%86/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-古诗词集合"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/" class="article-date">
-  <time datetime="2021-07-25T14:18:08.056Z" itemprop="datePublished">2021-07-25</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="古诗词集合"><a href="#古诗词集合" class="headerlink" title="古诗词集合"></a>古诗词集合</h1> 
-      <a class="article-more-link" href="/2021/07/25/%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%9B%86%E5%90%88/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-JavaWeb学习笔记"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2021-07-25T13:37:28.741Z" itemprop="datePublished">2021-07-25</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="JavaWeb-学习笔记"><a href="#JavaWeb-学习笔记" class="headerlink" title="JavaWeb 学习笔记"></a>JavaWeb 学习笔记</h1><p>——参考资料：黑马程序员 JavaWeb 系列</p>
-<p>涵盖内容：Junit测试、反射、注解、JDBC、连接池、Xml、Tomcat、Servlet、Filter、Listener、会话技术、Ajax、Json、Redis</p>
-<p>路漫漫其修远兮，吾将上下而求索。</p> 
-      <a class="article-more-link" href="/2021/07/25/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-程序员常用指令"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-date">
-  <time datetime="2021-07-24T14:29:46.974Z" itemprop="datePublished">2021-07-24</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="程序员常用指令"><a href="#程序员常用指令" class="headerlink" title="程序员常用指令"></a>程序员常用指令</h1> 
-      <a class="article-more-link" href="/2021/07/24/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-markdown学习"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/07/01/markdown%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2021-07-01T05:44:07.888Z" itemprop="datePublished">2021-07-01</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="MarkDown-学习"><a href="#MarkDown-学习" class="headerlink" title="MarkDown 学习"></a>MarkDown 学习</h1> 
-      <a class="article-more-link" href="/2021/07/01/markdown%E5%AD%A6%E4%B9%A0/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-国士无双"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/05/22/%E5%9B%BD%E5%A3%AB%E6%97%A0%E5%8F%8C/" class="article-date">
-  <time datetime="2021-05-22T13:42:31.130Z" itemprop="datePublished">2021-05-22</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="国士无双"><a href="#国士无双" class="headerlink" title="国士无双"></a>国士无双</h1><p>天下富足，禾下乘凉</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-java练习"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/05/14/java%E7%BB%83%E4%B9%A0/" class="article-date">
-  <time datetime="2021-05-13T23:42:30.837Z" itemprop="datePublished">2021-05-14</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="java特性合集"><a href="#java特性合集" class="headerlink" title="java特性合集"></a>java特性合集</h1><p>更新至jdbc、jdbc Template、多线程</p> 
-      <a class="article-more-link" href="/2021/05/14/java%E7%BB%83%E4%B9%A0/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-  </article>
-  
-
-  
-  <nav class="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
   </nav>
-  
-</section>
-</div>
 
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -675,6 +422,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">

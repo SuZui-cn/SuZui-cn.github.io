@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     宿醉的个人博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-安卓Fragment生命周期"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/21/%E5%AE%89%E5%8D%93Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2021-11-21T15:46:08.646Z" itemprop="datePublished">2021-11-21</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="Fragment的生命周期"><a href="#Fragment的生命周期" class="headerlink" title="Fragment的生命周期"></a>Fragment的生命周期</h2><a id="more"></a>
+
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fb44584daee3">https://www.jianshu.com/p/fb44584daee3</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lwbqqyumidi/p/3769113.html">https://www.cnblogs.com/lwbqqyumidi/p/3769113.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/70d7bfae18f3">https://www.jianshu.com/p/70d7bfae18f3</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/atree/archive/2010/12/10/android-thread.html">https://www.cnblogs.com/atree/archive/2010/12/10/android-thread.html</a></p>
+<h3 id="Fragment基本概要"><a href="#Fragment基本概要" class="headerlink" title="Fragment基本概要"></a>Fragment基本概要</h3><p><a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://developer.android.com/reference/android/app/Fragment.html">Fragment</a>表示 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://developer.android.com/reference/android/app/Activity.html">Activity</a> 中的行为或用户界面部分。您可以将多个片段(片段就是指 Fragment )组合在一个 Activity 中来构建多窗格 UI，以及在多个 Activity 中重复使用某个片段。您可以将片段视为 Activity 的模块化组成部分，它具有自己的生命周期，能接收自己的输入事件，并且您可以在 Activity 运行时添加或移除片段（有点像您可以在不同 Activity 中重复使用的“子 Activity”）。</p>
+<p>片段必须始终嵌入在 Activity 中，其生命周期直接受宿主 Activity 生命周期的影响。 例如，当 Activity 暂停时，其中的所有片段也会暂停；当 Activity 被销毁时，所有片段也会被销毁。</p>
+<p>当您将片段作为 Activity 布局的一部分添加时，它存在于 Activity 视图层次结构的某个 ViewGroup 内部，并且片段会定义其自己的视图布局。您可以通过在 Activity 的布局文件中声明片段，将其作为 <code>&lt;fragment&gt;</code> 元素插入您的 Activity 布局中，即静态添加。或者通过将其添加到某个现有 ViewGroup，利用应用代码进行动态插入。不过，片段并非必须成为 Activity 布局的一部分；您还可以将没有自己 UI 的片段用作 Activity 的不可见工作线程。</p>
+<p><img src="https://img-blog.csdnimg.cn/a8071ac07dc64881b3b0ab1659f9ad1e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_13,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<ol>
+<li>onAttach(Context context)：在Fragment和Activity关联上的时候调用，且仅调用一次。在该回调中我们可以将context转化为Activity保存下来，从而避免后期频繁调用getAtivity()获取Activity的局面，避免了在某些情况下getAtivity()为空的异常（Activity和Fragment分离的情况下）。同时也可以在该回调中将传入的Arguments提取并解析，在这里强烈推荐通过setArguments给Fragment传参数，因为在应用被系统回收时Fragment不会保存相关属性，具体之后会讲解。</li>
+<li>onCreate：在最初创建Fragment的时候会调用，和Activity的onCreate类似。</li>
+<li>View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)：在准备绘制Fragment界面时调用，返回值为Fragment要绘制布局的根视图，当然也可以返回null。注意使用inflater构建View时一定要将attachToRoot指明false，因为Fragment会自动将视图添加到container中，attachToRoot为true会重复添加报错。onCreateView并不是一定会被调用，当添加的是没有界面的Fragment就不会调用，比如调用FragmentTransaction的 add(Fragment fragment, String tag)方法。</li>
+<li>onActivityCreated ：在Activity的onCreated执行完时会调用。</li>
+<li>onStart() ：Fragment对用户可见的时候调用，前提是Activity已经started。</li>
+<li>onResume()：Fragment和用户之前可交互时会调用，前提是Activity已经resumed。</li>
+<li>onPause()：Fragment和用户之前不可交互时会调用。</li>
+<li>onStop()：Fragment不可见时会调用。</li>
+<li>onDestroyView()：在移除Fragment相关视图层级时调用。</li>
+<li>onDestroy()：最终清楚Fragment状态时会调用。</li>
+<li>onDetach()：Fragment和Activity解除关联时调用。</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/367ae2572dd343babe8c2e5dc83cfabc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/bd8073311cf0409ca66e9db8fc3a24cc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAc3VfenVp,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>Fragment 生命周期与 Activity 生命周期的一个关键区别就在于，Fragment 的生命周期方法是由托管Activity而不是操作系统调用的。Activity 中生命周期方法都是 protected，而 Fragment 都是 public，也能印证了这一点，因为 Activity 需要调用 Fragment 那些方法并管理它。</p>
+<h3 id="加载-Fragment"><a href="#加载-Fragment" class="headerlink" title="加载 Fragment"></a>加载 Fragment</h3><ol>
+<li>静态加载 在 Activity 的布局文件内声明片段<br>下边代码是含有两个 Fragment 的 Activity 布局</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">&quot;horizontal&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fragment</span> <span class="attr">android:name</span>=<span class="string">&quot;com.example.news.ArticleListFragment&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">&quot;@+id/list&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fragment</span> <span class="attr">android:name</span>=<span class="string">&quot;com.example.news.ArticleReaderFragment&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">&quot;@+id/viewer&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">&quot;2&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中 fragment 中的 android:name 属性要指定 fragment  对应的具体包名路径，当系统创建此 Activity 布局时，会实例化在布局中指定的每个 fragment，并为每个 fragment 调用 onCreateView()方法，以检索每个  fragment 的布局。系统会直接插入 fragment 返回的 View 来替代 fragment 元素。</p>
+<p>并且在 Activity 活动里可以直接使用 findViewById() 方法获取 fragment 对应布局里的控件。同样在 fragment 里可以直接使用 getActivity()方法获得绑定的主 Activity 实例，并调用 Activity 里的方法或其他 fragment 实例。</p>
+<ol>
+<li>动态加载 通过编程方式将 fragment 添加到某个activity布局里现有的 <strong>ViewGroup</strong> （例如 LinearLayout 或 FrameLayout）里。<br>要想在 Avtivity 中执行 Fragment 事务 (如添加、删除或替换 Fragment)，必须使用 FragmentTransaction 中的 API。可以使用下面这样从 Activity 中获取一个 FragmentTransaction。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FragmentManager  fragmentManager &#x3D; getFragmentManager();</span><br><span class="line">FragmentTransaction fragmentTransaction &#x3D; fragmentManager.beginTransaction();</span><br></pre></td></tr></table></figure>
+<p>然后可以使用 add()方法添加一个 fragment ，指定要添加的 fragment 和插入到哪个视图。例如</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ExampleFragment  exampleFragment = <span class="keyword">new</span> ExampleFragment();</span><br><span class="line">fragmentTransaction.<span class="keyword">add</span>(R.id.frame_layout,exampleFragment);</span><br><span class="line">fragmentTransaction.commit();</span><br></pre></td></tr></table></figure>
+<p>add 方法中第一个参数是一个activity 对应布局文件中的 ViewGroup，即应该放置 fragment 的位置，由资源 ID 指定，第二个参数是加入的 fragment ，一旦通过 fragmentTransaction 做了更改，最后必须使用 commit 方法以使更改生效。</p>
+<h3 id="添加没有-UI-的-fragment"><a href="#添加没有-UI-的-fragment" class="headerlink" title="添加没有 UI 的 fragment"></a>添加没有 UI 的 fragment</h3><p>要想添加没有 UI 的片段，请使用 add(Fragment, String) 从 Activity 添加片段（为片段提供一个唯一的字符串“标记”，而不是视图 ID）。 这会添加片段，但由于它并不与 Activity 布局中的视图关联，因此不会收到对onCreateView() 的调用。因此，不需要实现该方法。</p>
+<h3 id="执行-Fragment-事务"><a href="#执行-Fragment-事务" class="headerlink" title="执行 Fragment 事务"></a>执行 Fragment 事务</h3><p>在 Activity 中使用 Fragment 可以很方便的进行添加 add、替换 replace、移除 remove 等操作，这样提交给 Activity 的每组更改都可以称为<strong>事务</strong>。像上边动态添加 fragment 那样，使用 FragmentTransaction 里的 API 就可以执行一项事务。同时也可以将此事务保存到 Activity 管理的返回栈中，从而用户可以回退到 fragment 改变之前的状态（类似于 activity 回退到上一个页面）。</p>
+<p>下边的例子演示了如何替换一个 fragment，并把替换之前的状态保存到 Activity 的返回栈中。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Fragment newFragment = <span class="keyword">new</span> ExampleFragment();</span><br><span class="line"> FragmentTransaction mTransaction =  getFragmentManager().beginTransaction();</span><br><span class="line"><span class="comment">//用新的 fragment 替换原来fragment 所在位置的布局，并且把此事务添加到返回栈中。</span></span><br><span class="line"> mTransaction.replace(R.id.frame_layout,newFragment);</span><br><span class="line"> mTransaction.addToBackStack(<span class="literal">null</span>);</span><br><span class="line"> mTransaction.commit();</span><br></pre></td></tr></table></figure>
+<p>如果在执行移除 fragment 的事务时没有调用 addToBackStack()，则事务提交时该 fragment 会被销毁，用户将无法回退到该 fragment 。 不过，如果在删除 fragment 时调用了 addToBackStack()，则系统会<em>停止</em>该 fragment，并在用户按返回键时将其恢复。</p>
+<h3 id="Fragment-与-Activity-通信"><a href="#Fragment-与-Activity-通信" class="headerlink" title="Fragment 与 Activity 通信"></a>Fragment 与 Activity 通信</h3><p>上边说过，在 fragment 中可以调用 getActivity() 获取 activity 的实例并调用 activity 里的方法和布局，同样在 activity 里也可以通过 findFragmentById()（对于在 activity 提供 fragment 布局的） 或 findFragmentByTag() （对于在 activity 提供或者不提供 fragment 布局的）方法获取 fragment 的实例，例如在 activity 中从 FragmentManager 获取对 Fragment 的引用来调用 fragment 中的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fragment fragment &#x3D; getFragmentManager.findFragmentById(R.id.fragment_container);</span><br></pre></td></tr></table></figure>
+<p>使用 FragmentManager 还可以执行的操作包括：</p>
+<ul>
+<li>通过 findFragmentById 或 findFragmentByTag 获取 activity 中存在的 fragment 的实例</li>
+<li>通过 popBackStack （<em>模拟用户点击返回按钮操作</em>）将 fragment 从返回栈中弹出</li>
+<li>通过 addOnBackStackChangedListener() 注册一个监听返回栈改变的监听器</li>
+<li>像上边生成 fragmentTransaction 的方法，可以使用 fragmentManager 生成一个 fragmentTransaction 来执行某些事务，比如添加、替换、移除、addToBackStack（）等。</li>
+</ul>
+<p>需要注意Fragment中不存在onRestart()方法，该方法只存在与Activity中。</p>
+<h3 id="Fragment相关操作对生命周期的影响"><a href="#Fragment相关操作对生命周期的影响" class="headerlink" title="Fragment相关操作对生命周期的影响"></a>Fragment相关操作对生命周期的影响</h3><p>添加Fragment可以分为静态添加和动态添加两大类。静态添加是在XML中直接添加Fragment，简单方便，缺点是添加之后不能在删除。动态添加是在代码中FragmentManger使用一系列FragmentTransaction事务操作动态控制，灵活多变。一般都是使用动态添加，下面就讲讲动态添加有关的生命周期。</p>
+<ol>
+<li>add：onAttach-&gt;onCreate-&gt;onCreateView-&gt;onActivityCreated-&gt;onStart-&gt;onResume</li>
+<li>remove：onPause-&gt;onStop-&gt;onDestroyView-&gt;onDestroy-&gt;onDetach</li>
+<li>show：onHiddenChanged(boolean hidden) hidden为false</li>
+<li>hide：onHiddenChanged(boolean hidden) hidden为true</li>
+<li>replace：旧Fragment的remove生命周期-&gt;新Fragment的add生命周期</li>
+<li>replace+addToBackStack：onPause-&gt;onStop-&gt;onDestroyView-&gt;新Fragment的add生命周期<br>之后点击back：新Fragment的remove-&gt;onCreateView-&gt;onViewCreated-&gt;onActivityCreated-&gt;onStart-&gt;onResume 就是第一张图的线</li>
+<li>detach：onPause-&gt;onStop-&gt;onDestroyView 可以看到只是视图被移除，Fragment关联状态还是不变，还是处于FragmentManger的管理下</li>
+<li>FragmentTransaction.attach(Fragment var1)：onStart-&gt;onResume-&gt;onCreateView</li>
+</ol>
+<blockquote>
+<p>注意：Fragment的show和hide仅仅是将Fragment视图设置为是否可见，不会调用任何生命周期。该Fragment的生命周期还是会随着Activity的生命周期变化而变化，例如FragmentA hide、FragmentB show，点击Home A和B都会onPause-&gt;onStop</p>
+</blockquote>
+<h3 id="应用被系统回收对生命周期的影响"><a href="#应用被系统回收对生命周期的影响" class="headerlink" title="应用被系统回收对生命周期的影响"></a>应用被系统回收对生命周期的影响</h3><p>应用被回收一般都是后台应用，所以生命周期是从onDestroyView开始</p>
+<ul>
+<li>单独一个Fragment<br>onDestroyView-&gt;onDestroy-&gt;onDetach-&gt;add生命周期</li>
+<li>Fragment A hide，Fragment B show<br>A.onDestroyView-&gt;A.onDestroy-&gt;A.onDetach-&gt;B.onDestroyView-&gt;B.onDestroy-&gt;B.onDetach-&gt;A.onAttach-&gt;A.onCreate-&gt;B.onAttach-&gt;B.onCreate-&gt;A.onCreateView-&gt;A.onActivityCreated-&gt;B.onCreateView-&gt;B.onActivityCreated-&gt;A.onStart-&gt;B.onStart-&gt;A.onResume-&gt;B.onResume</li>
+</ul>
+<blockquote>
+<p>为了防止在系统回收应用情况下，再次进不出错，强烈建议大家<br>\1. 使用setArguments(Bundle bundle)方法传递参数。对于常规变量想必大家都已经十分熟练了，就不细说了。这里主要强调View变量和接口变量，View变量可以通过传入View的id，之后再通过id获取view的方法来实现。接口可以通过Activity实现，Fragment强转Activity实现。<br>\2. addFragment之前先通过findFragmentById判断是否添加过避免重复添加，如使用FragmentAdapter可以在onSaveInstanceState存储相应Fragment.getTag</p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/11/21/%E5%AE%89%E5%8D%93Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/11/21/%E5%AE%89%E5%8D%93Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/11/21/%E5%AE%89%E5%8D%93Activaty%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">国士无双</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>
