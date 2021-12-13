@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     宿醉的个人博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-校园博客总体设计文档"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="article-date">
+  <time datetime="2021-12-13T05:54:04.031Z" itemprop="datePublished">2021-12-13</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">5 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="校园博客总体设计文档"><a href="#校园博客总体设计文档" class="headerlink" title="校园博客总体设计文档"></a>校园博客总体设计文档</h1><a id="more"></a>
+
+<h1 id="1引言"><a href="#1引言" class="headerlink" title="1引言"></a>1引言</h1><h2 id="1-1编写目的"><a href="#1-1编写目的" class="headerlink" title="1.1编写目的"></a>1.1编写目的</h2><p>  为校园博客的开发者提供明确的设计方法。</p>
+<h2 id="1-2背景"><a href="#1-2背景" class="headerlink" title="1.2背景"></a>1.2背景</h2><p>  说明：</p>
+<p>  a. 待开发软件系统的名称：校园博客</p>
+<p>  b. 甲方：叙利亚战争组</p>
+<h2 id="1-3定义"><a href="#1-3定义" class="headerlink" title="1.3定义"></a>1.3定义</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CRUD</td>
+<td>对相关数据的增加(Create)、查询(Retrieve)、更新(Update)和删除(Delete)</td>
+<td></td>
+</tr>
+<tr>
+<td>相关文档</td>
+<td>需求分析，概要设计，详细设计，数据库设计，网络接口设计(按需)，部署说明手册，用户操作使用手册</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="1-4参考资料"><a href="#1-4参考资料" class="headerlink" title="1.4参考资料"></a>1.4参考资料</h2><p>  【1】《软件需求说明书（GB856T——88）》</p>
+<p>  【2】《校园博客需求分析文档》</p>
+<p>  【3】《校园博客数据库设计文档》</p>
+<p>  【4】《校园博客接口设计文档》</p>
+<p>  【5】《校园博客测试文档》</p>
+<p>  【6】《校园博客问题反馈文档》</p>
+<p>  【7】《校园博客用户手册文档》</p>
+<h2 id="2-1需求规定"><a href="#2-1需求规定" class="headerlink" title="2.1需求规定"></a>2.1需求规定</h2><p>  参考《校园博客需求分析文档》</p>
+<h2 id="2-2运行环境"><a href="#2-2运行环境" class="headerlink" title="2.2运行环境"></a>2.2运行环境</h2><p>操作系统：Linux类系统</p>
+<p>WEB服务器：Tomcat:9.0</p>
+<p>数据库：MySQL:5.7</p>
+<p>…………</p>
+<h2 id="2-3基本设计概念和处理流程"><a href="#2-3基本设计概念和处理流程" class="headerlink" title="2.3基本设计概念和处理流程"></a>2.3基本设计概念和处理流程</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<p>主要模块：用户模块、管理员模块、检索模块、文章模块、收藏模块</p>
+<h2 id="2-4结构"><a href="#2-4结构" class="headerlink" title="2.4结构"></a>2.4结构</h2><h3 id="2-4-1用户模块"><a href="#2-4-1用户模块" class="headerlink" title="      2.4.1用户模块"></a><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img">      2.4.1用户模块</h3><p>l 前端设计</p>
+<p>用户注册时需要判断昵称和密码是否为空、是否存在非法字符，用户名前端不用涉及，性别采取复选框的形式，头像支持jpg、png等常用格式，注册可选择邮箱或手机验证，邮箱需要判断字符串格式是否是邮箱格式（以@为标识），手机长度应为11位（暂不支持海外用户）。</p>
+<p>用户登录时需要判断用户名和密码是否存在非法字符和是否为空，使用验证登录则向后端发起验证请求，由后端判断验证码是否正确。</p>
+<p>l 后端设计</p>
+<p>后端根据前端发送到用户基本信息对用户进行封装，用户密码选用base64加密，当前端发起邮箱和手机验证时，向用户发送对应的验证码并判断从前端发送到验证码是否一致。</p>
+<h3 id="2-4-2收藏模块"><a href="#2-4-2收藏模块" class="headerlink" title="2.4.2收藏模块"></a>2.4.2收藏模块</h3><p><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></p>
+<p>l 前端设计</p>
+<p>用户点击文章的★按钮时向后端发送收藏请求，用户可以在个人信息页面查看收藏的文章。</p>
+<p>l 后端设计</p>
+<p>根据前端发送到请求做出相对应的业务逻辑处理，当用户查看收藏列表时返回该用户收藏的所有文字。</p>
+<h3 id="2-4-3检索模块"><a href="#2-4-3检索模块" class="headerlink" title="2.4.3检索模块"></a>2.4.3检索模块</h3><p><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="img"></p>
+<p>l 前端设计</p>
+<p>用下拉框让用户选择搜索用户（用户ID）还是文章（类别、主题、摘要），前端通过输入框获取用户输入发送给后端并显示后端返回的数据。</p>
+<p>l 后端设计</p>
+<p>根据前端请求的数据进行查找并返回对应的数据。</p>
+<h3 id="2-4-4文章模块（待完善）"><a href="#2-4-4文章模块（待完善）" class="headerlink" title="2.4.4文章模块（待完善）"></a>2.4.4文章模块（待完善）</h3><p><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg" alt="img"></p>
+<p>l 前端设计</p>
+<p>用户点击发布文章时进入文章编辑页面（参考CSDN），文章主题、文章类别、文章内容为必填。图片为文章的封面。文章内容可以使用插件将markdown转换为html。</p>
+<p>评论只支持对文章评论，暂不支持回复。</p>
+<p>l 后端设计</p>
+<p>封装前端数据并存储。。。。。。。。。。。。。。（待完善）</p>
+<h3 id="2-4-5管理员模块"><a href="#2-4-5管理员模块" class="headerlink" title="2.4.5管理员模块"></a>2.4.5管理员模块</h3><p><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg" alt="img"></p>
+<p>l 前端设计</p>
+<p>管理员从管理员登录界面设计后可以查看所有用户的信息，可以重置用户的密码。可以查看用户的文章，可以驳回文章与删除文章。</p>
+<p>l 后端设计</p>
+<p>返回所有用户信息与文章信息，如果文章存在敏感字符则进行标注再返回。</p>
+<h2 id="2-5功能需求与程序的关系（待完善）"><a href="#2-5功能需求与程序的关系（待完善）" class="headerlink" title="2.5功能需求与程序的关系（待完善）"></a>2.5功能需求与程序的关系（待完善）</h2><p>本条用一张如下的矩阵图说明各项功能需求的实现同各块程序的分配关系：</p>
+<p><img src="file:///C:/Users/北落燕门/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg" alt="img"></p>
+<h1 id="3接口设计"><a href="#3接口设计" class="headerlink" title="3接口设计"></a>3接口设计</h1><p>参考接口文档《校园博客接口设计文档》</p>
+<h1 id="4运行设计"><a href="#4运行设计" class="headerlink" title="4运行设计"></a>4运行设计</h1><h2 id="4-1运行模块组合"><a href="#4-1运行模块组合" class="headerlink" title="4.1运行模块组合"></a>4.1运行模块组合</h2><p>  说明对系统施加不同的外界运行控制时所引起的各种不同的运行模块组合，说明每种运行所历经的内部模块和支持软件。</p>
+<h2 id="4-2运行控制"><a href="#4-2运行控制" class="headerlink" title="4.2运行控制"></a>4.2运行控制</h2><p>  说明每一种外界的运行控制的方式方法和操作步骤。</p>
+<h2 id="4-3运行时间"><a href="#4-3运行时间" class="headerlink" title="4.3运行时间"></a>4.3运行时间</h2><p>  说明每种运行模块组合将占用各种资源的时间。</p>
+<h1 id="5系统数据结构设计"><a href="#5系统数据结构设计" class="headerlink" title="5系统数据结构设计"></a>5系统数据结构设计</h1><h2 id="5-1逻辑结构设计要点"><a href="#5-1逻辑结构设计要点" class="headerlink" title="5.1逻辑结构设计要点"></a>5.1逻辑结构设计要点</h2><p>  给出本系统内所使用的每个数据结构的名称、标识符以及它们之中每个数据项、记录、文卷和系的标识、定义、长度及它们之间的层次的或表格的相互关系。</p>
+<h2 id="5-2物理结构设计要点"><a href="#5-2物理结构设计要点" class="headerlink" title="5.2物理结构设计要点"></a>5.2物理结构设计要点</h2><p>  给出本系统内所使用的每个数据结构中的每个数据项的存储要求，访问方法、存取单位、存取的物理关系（索引、设备、存储区域）、设计考虑和保密条件。</p>
+<h1 id="6系统出错处理设计"><a href="#6系统出错处理设计" class="headerlink" title="6系统出错处理设计"></a>6系统出错处理设计</h1><h2 id="6-1出错信息"><a href="#6-1出错信息" class="headerlink" title="6.1出错信息"></a>6.1出错信息</h2><p>  用一览表的方式说明每种可能的出错或故障情况出现时，系统输出信息的形式、含义及处理方法。</p>
+<h2 id="6-2补救措施"><a href="#6-2补救措施" class="headerlink" title="6.2补救措施"></a>6.2补救措施</h2><p>  说明故障出现后可能采取的变通措施，包括：</p>
+<p>  a. 后备技术说明准备采用的后备技术，当原始系统数据万一丢失时启用的副本的建立和启动的技术，例如周期性地把磁盘信息记录到磁带上去就是对于磁盘媒体的一种后备技术；</p>
+<p>  b. 降效技术说明准备采用的后备技术，使用另一个效率稍低的系统或方法来求得所需结果的某些部分，例如一个自动系统的降效技术可以是手工操作和数据的人工记录；</p>
+<p>  c. 恢复及再启动技术说明将使用的恢复再启动技术，使软件从故障点恢复执行或使软件从头开始重新运行的方法。</p>
+<h2 id="6-3系统维护设计"><a href="#6-3系统维护设计" class="headerlink" title="6.3系统维护设计"></a>6.3系统维护设计</h2><p>  说明为了系统维护的方便而在程序内部设计中作出的安排，包括在程序中专门安排用于系统的检查与维护的检测点和专用模块。 各个程序之间的对应关系，可采用如下的矩阵图的形式；</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">国士无双</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>

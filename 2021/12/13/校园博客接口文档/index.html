@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     宿醉的个人博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-校园博客接口文档"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="article-date">
+  <time datetime="2021-12-13T05:53:34.079Z" itemprop="datePublished">2021-12-13</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">15 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="校园博客接口文档"><a href="#校园博客接口文档" class="headerlink" title="校园博客接口文档"></a>校园博客接口文档</h1><a id="more"></a>
+
+<h2 id="账号模块"><a href="#账号模块" class="headerlink" title="账号模块"></a>账号模块</h2><h3 id="密码登录接口"><a href="#密码登录接口" class="headerlink" title="密码登录接口"></a>密码登录接口</h3><p>URL:/api/login</p>
+<p>请求方式：POST</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>String</td>
+<td>是</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>是</td>
+<td>密码</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>登录成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//响应体：</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;phone&quot;</span>: <span class="string">&quot;19881661160&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;sex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;email&quot;</span>: <span class="string">&quot;1736124626@qq.com&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;username&quot;</span>: <span class="string">&quot;刘晓虎&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//响应头</span></span><br><span class="line"><span class="comment">//需要携带token才能访问其他接口</span></span><br><span class="line">Authorization:token</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>登录失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;密码不正确&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="注册接口"><a href="#注册接口" class="headerlink" title="注册接口"></a>注册接口</h3><p>URL:/api/register</p>
+<p>请求方式：POST</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uid</td>
+<td>int</td>
+<td>是</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>upassword</td>
+<td>String</td>
+<td>是</td>
+<td>用户密码</td>
+</tr>
+<tr>
+<td>uphone</td>
+<td>String</td>
+<td>否</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>String</td>
+<td>是</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>usex</td>
+<td>String</td>
+<td>否</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>uemail</td>
+<td>String</td>
+<td>否</td>
+<td>邮箱</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>注册成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="string">&quot;注册成功&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注册失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;注册失败，用户名已注册&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="邮箱登录接口"><a href="#邮箱登录接口" class="headerlink" title="邮箱登录接口"></a>邮箱登录接口</h3><p>URL：/api/email</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>email</td>
+<td>String</td>
+<td>是</td>
+<td>邮箱</td>
+</tr>
+</tbody></table>
+<p>暂定</p>
+<h2 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h2><h3 id="查询所有用户"><a href="#查询所有用户" class="headerlink" title="查询所有用户"></a>查询所有用户</h3><p>URL:/api/user/getAll</p>
+<p>请求方式：GET</p>
+<p>请求参数（携带token）</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;刘晓虎&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;19881661160&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1736124626@qq.com&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;兰茂豪&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345678910&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;谭海蓉&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345678910&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;女&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">        &#125;,</span><br><span class="line">        .......</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="根据ID查询单个用户"><a href="#根据ID查询单个用户" class="headerlink" title="根据ID查询单个用户"></a>根据ID查询单个用户</h3><p>URL: /api/user/getOne/{uid}</p>
+<p><em>uid：用户id</em></p>
+<p>请求方式：GET</p>
+<p>响应参数</p>
+<ul>
+<li>查询成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;兰茂豪&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345678910&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="用户分页查询（支持模糊查询）"><a href="#用户分页查询（支持模糊查询）" class="headerlink" title="用户分页查询（支持模糊查询）"></a>用户分页查询（支持模糊查询）</h3><p>URL:/api/user/getPage/{currentPage}/{pageSize}</p>
+<p><em>currentPage：当前页</em></p>
+<p><em>pageSize：每页大小</em></p>
+<p>请求方式：GET</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uname</td>
+<td>String</td>
+<td>否</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>usex</td>
+<td>String</td>
+<td>否</td>
+<td>用户性别</td>
+</tr>
+</tbody></table>
+<p>请求参数</p>
+<p>响应参数</p>
+<ul>
+<li>响应成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;records&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;刘晓虎&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;19881661160&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1736124626@qq.com&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;兰茂豪&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">2</span>,</span><br><span class="line">                <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345678910&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;谭海蓉&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">3</span>,</span><br><span class="line">                <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345678910&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;女&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;田晓&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">4</span>,</span><br><span class="line">                <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12346578910&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uemail&quot;</span>: <span class="string">&quot;1234567891@qq.com&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;uname&quot;</span>: <span class="string">&quot;谈偲瑶&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">5</span>,</span><br><span class="line">                <span class="attr">&quot;uphone&quot;</span>: <span class="string">&quot;12345698710&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uemail&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">                <span class="attr">&quot;usex&quot;</span>: <span class="string">&quot;女&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;upassword&quot;</span>: <span class="string">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uheadImg&quot;</span>: <span class="literal">null</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">&quot;total&quot;</span>: <span class="number">11</span>,</span><br><span class="line">        <span class="attr">&quot;size&quot;</span>: <span class="number">5</span>,</span><br><span class="line">        <span class="attr">&quot;current&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;orders&quot;</span>: [],</span><br><span class="line">        <span class="attr">&quot;optimizeCountSql&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;hitCount&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;countId&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="attr">&quot;maxLimit&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="attr">&quot;searchCount&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;pages&quot;</span>: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>响应失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="添加用户接口"><a href="#添加用户接口" class="headerlink" title="添加用户接口"></a>添加用户接口</h3><p>URL：/api/user/save</p>
+<p>请求方式：POST</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uid</td>
+<td>int</td>
+<td>是</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>upassword</td>
+<td>String</td>
+<td>是</td>
+<td>用户密码</td>
+</tr>
+<tr>
+<td>uphone</td>
+<td>String</td>
+<td>否</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>String</td>
+<td>是</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>usex</td>
+<td>String</td>
+<td>否</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>uemail</td>
+<td>String</td>
+<td>否</td>
+<td>邮箱</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>添加成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="删除用户接口"><a href="#删除用户接口" class="headerlink" title="删除用户接口"></a>删除用户接口</h3><p>URL：/api/user/{id}</p>
+<p><em>id：用户编号</em></p>
+<p>请求方式：DELETE</p>
+<p>响应参数</p>
+<ul>
+<li>删除成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="更新用户接口"><a href="#更新用户接口" class="headerlink" title="更新用户接口"></a>更新用户接口</h3><p>URL：/api/user</p>
+<p>请求方式：PUT</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uid</td>
+<td>int</td>
+<td>是</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>upassword</td>
+<td>String</td>
+<td>是</td>
+<td>用户密码</td>
+</tr>
+<tr>
+<td>uphone</td>
+<td>String</td>
+<td>否</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>String</td>
+<td>是</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>usex</td>
+<td>String</td>
+<td>否</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>uemail</td>
+<td>String</td>
+<td>否</td>
+<td>邮箱</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>更新成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="文章模块"><a href="#文章模块" class="headerlink" title="文章模块"></a>文章模块</h2><h3 id="查询所有文章"><a href="#查询所有文章" class="headerlink" title="查询所有文章"></a>查询所有文章</h3><p>URL：/api/article/getAll</p>
+<p>请求方式：GET</p>
+<p>响应参数</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;这是一篇测试用例&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;这是测试的内容&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">12</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;这是一篇测试用例&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;第一次认识王赟老师是在知乎上，当时看到他的问答，觉得清晰受用。后来发现他居然在图灵出书了，小编甚是激动呀！\n\n翻了两天，终于把这本书都看完了。虽然里面部分题目的知识点已经忘得差不多了，但是有些题目看到王老师的解题思路，忍不住拍大腿：“居然还能这么解！”看书过程中还不停地点头，“原来是这样”“我咋就没想到”“不错不错这次会了”......就这样沉醉了两天，看到最后一页的时候竟然有点忧伤，因为后边没有了，也确实没看够。\n\n就是这样一本小书，不那么厚，但是内容绝对会让你意犹未尽，并且不断发出“柳岸花明又一村”的感叹。如果你对数学有兴趣不妨来跟着作者的思路一起研究，保证你收获满满。\n\n如此有意思的一本书，我们来近距离了解一下吧~，但凡遇到数学问题，总是让一部分人很挠头。有时候很羡慕那些数学好的学霸，他们总能轻轻松松搞定一切数学问题，更重要的是还能将复杂的问题用最简单的话讲解清楚。而王赟就是这样一位学霸。&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">5</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">15</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;靓仔&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;第一次认识王赟老师是在知乎上，当时看到他的问答，觉得清晰受用。后来发现他居然在图灵出书了，小编甚是激动呀！\n\n翻了两天，终于把这本书都看完了。虽然里面部分题目的知识点已经忘得差不多了，但是有些题目看到王老师的解题思路，忍不住拍大腿：“居然还能这么解！”看书过程中还不停地点头，“原来是这样”“我咋就没想到”“不错不错这次会了”......就这样沉醉了两天，看到最后一页的时候竟然有点忧伤，因为后边没有了，也确实没看够。\n\n就是这样一本小书，不那么厚，但是内容绝对会让你意犹未尽，并且不断发出“柳岸花明又一村”的感叹。如果你对数学有兴趣不妨来跟着作者的思路一起研究，保证你收获满满。\n\n如此有意思的一本书，我们来近距离了解一下吧~，但凡遇到数学问题，总是让一部分人很挠头。有时候很羡慕那些数学好的学霸，他们总能轻轻松松搞定一切数学问题，更重要的是还能将复杂的问题用最简单的话讲解清楚。而王赟就是这样一位学霸。&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">8</span></span><br><span class="line">        &#125;,</span><br><span class="line">        ........</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="根据ID查询单个文章"><a href="#根据ID查询单个文章" class="headerlink" title="根据ID查询单个文章"></a>根据ID查询单个文章</h3><p>URL: /api/article/getOne/{uId}</p>
+<p><em>uId：用户id</em></p>
+<p>请求方式：GET</p>
+<p>响应参数</p>
+<ul>
+<li>查询成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;这是一篇测试用例&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;这是测试的内容&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">4</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;这是一篇测试用例&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;这是测试的内容&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;atId&quot;</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;这是一篇测试用例&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;这是测试的内容&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;uid&quot;</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="文章分页查询（支持模糊查询）"><a href="#文章分页查询（支持模糊查询）" class="headerlink" title="文章分页查询（支持模糊查询）"></a>文章分页查询（支持模糊查询）</h3><p>URL:/api/article/getPage/{currentPage}/{pageSize}</p>
+<p><em>currentPage：当前页</em></p>
+<p><em>pageSize：每页大小</em></p>
+<p>请求方式：GET</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u_id</td>
+<td>int</td>
+<td>是</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>at_date</td>
+<td>datatime</td>
+<td>是</td>
+<td>创作时间</td>
+</tr>
+<tr>
+<td>at_title</td>
+<td>String</td>
+<td>是</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>at_abstract</td>
+<td>String</td>
+<td>是</td>
+<td>文字描述</td>
+</tr>
+<tr>
+<td>at_content</td>
+<td>String</td>
+<td>是</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>at_type</td>
+<td>String</td>
+<td>是</td>
+<td>文章标签</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>响应成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;records&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;atId&quot;</span>: <span class="number">15</span>,</span><br><span class="line">                <span class="attr">&quot;atDate&quot;</span>: <span class="string">&quot;2021-12-03&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;atTitle&quot;</span>: <span class="string">&quot;测试用例文章&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;atAbstract&quot;</span>: <span class="string">&quot;靓仔&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;atContent&quot;</span>: <span class="string">&quot;第一次认识王赟老师是在知乎上，当时看到他的问答，觉得清晰受用。后来发现他居然在图灵出书了，小编甚是激动呀！\n\n翻了两天，终于把这本书都看完了。虽然里面部分题目的知识点已经忘得差不多了，但是有些题目看到王老师的解题思路，忍不住拍大腿：“居然还能这么解！”看书过程中还不停地点头，“原来是这样”“我咋就没想到”“不错不错这次会了”......就这样沉醉了两天，看到最后一页的时候竟然有点忧伤，因为后边没有了，也确实没看够。\n\n就是这样一本小书，不那么厚，但是内容绝对会让你意犹未尽，并且不断发出“柳岸花明又一村”的感叹。如果你对数学有兴趣不妨来跟着作者的思路一起研究，保证你收获满满。\n\n如此有意思的一本书，我们来近距离了解一下吧~，但凡遇到数学问题，总是让一部分人很挠头。有时候很羡慕那些数学好的学霸，他们总能轻轻松松搞定一切数学问题，更重要的是还能将复杂的问题用最简单的话讲解清楚。而王赟就是这样一位学霸。&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;atType&quot;</span>: <span class="string">&quot;测试文章&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;uid&quot;</span>: <span class="number">8</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">&quot;total&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;size&quot;</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">&quot;current&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;orders&quot;</span>: [],</span><br><span class="line">        <span class="attr">&quot;optimizeCountSql&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;hitCount&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;countId&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="attr">&quot;maxLimit&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="attr">&quot;searchCount&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;pages&quot;</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>响应失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="添加文章接口"><a href="#添加文章接口" class="headerlink" title="添加文章接口"></a>添加文章接口</h3><p>URL：/api/article/save</p>
+<p>请求方式：POST</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u_id</td>
+<td>int</td>
+<td>是</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>at_date</td>
+<td>datatime</td>
+<td>是</td>
+<td>创作时间</td>
+</tr>
+<tr>
+<td>at_title</td>
+<td>String</td>
+<td>是</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>at_abstract</td>
+<td>String</td>
+<td>是</td>
+<td>文字描述</td>
+</tr>
+<tr>
+<td>at_content</td>
+<td>String</td>
+<td>是</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>at_type</td>
+<td>String</td>
+<td>是</td>
+<td>文章标签</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>添加成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="删除文章接口"><a href="#删除文章接口" class="headerlink" title="删除文章接口"></a>删除文章接口</h3><p>URL：/api/article/{atId}</p>
+<p><em>atId：编号</em></p>
+<p>请求方式：DELETE</p>
+<p>响应参数</p>
+<ul>
+<li>删除成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="更新文章接口"><a href="#更新文章接口" class="headerlink" title="更新文章接口"></a>更新文章接口</h3><p>URL：/api/article</p>
+<p>请求方式：PUT</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u_id</td>
+<td>int</td>
+<td>是</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>at_date</td>
+<td>datatime</td>
+<td>是</td>
+<td>创作时间</td>
+</tr>
+<tr>
+<td>at_title</td>
+<td>String</td>
+<td>是</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>at_abstract</td>
+<td>String</td>
+<td>是</td>
+<td>文字描述</td>
+</tr>
+<tr>
+<td>at_content</td>
+<td>String</td>
+<td>是</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>at_type</td>
+<td>String</td>
+<td>是</td>
+<td>文章标签</td>
+</tr>
+</tbody></table>
+<p>响应参数</p>
+<ul>
+<li>更新成功</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作成功&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新失败</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;操作失败&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;data&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+<h2 id="图片模块"><a href="#图片模块" class="headerlink" title="图片模块"></a>图片模块</h2><h3 id="图片上传接口"><a href="#图片上传接口" class="headerlink" title="图片上传接口"></a>图片上传接口</h3><p>URL：/api/imgUpload</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/12/13/%E6%A0%A1%E5%9B%AD%E5%8D%9A%E5%AE%A2%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/12/04/%E8%93%9D%E6%A1%A5%E6%9D%AFweb%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="宿醉的个人博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">国士无双</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝瓶快乐水吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1403783133&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>
