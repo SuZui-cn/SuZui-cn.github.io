@@ -47,7 +47,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-tomcat403问题"
+  id="post-BUG/MySQL问题集锦"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -56,15 +56,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2021/10/11/tomcat403%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2021-10-11T01:31:56.150Z" itemprop="datePublished">2021-10-11</time>
+      <a href="/2021/04/20/BUG/MySQL%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" class="article-date">
+  <time datetime="2021-04-20T00:35:35.120Z" itemprop="datePublished">2021-04-20</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">151</span>
+            <span class="post-count">320</span>
         </span>
     </span>
 
@@ -88,12 +88,17 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Tomcat403问题"><a href="#Tomcat403问题" class="headerlink" title="Tomcat403问题"></a>Tomcat403问题</h1><a id="more"></a>
+  <h1 id="MySQL-BUG集锦"><a href="#MySQL-BUG集锦" class="headerlink" title="MySQL  BUG集锦"></a>MySQL  BUG集锦</h1><a id="more"></a>
 
-<p>首先在conf/tomcat-users.xml文件里面，在</tomcat-users>前面添加如下代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">password</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后重启tomcat，重新访问manager app页面，如果此时仍然出现403 Access Denied错误，那么就是访问的ip地受到了限制，打开/webapps/manager/META-INF/目录下context.xml文件，不是conf/目录下的context.xml文件，一定不要搞错了</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.valves.RemoteAddrValve&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">allow</span>=<span class="string">&quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1|\d+\.\d+\.\d+\.\d+&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="错误提示：1215-Cannot-add-foreign-key-constraint"><a href="#错误提示：1215-Cannot-add-foreign-key-constraint" class="headerlink" title="错误提示：1215 - Cannot add foreign key constraint"></a>错误提示：1215 - Cannot add foreign key constraint</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#建学生信息表 student </span><br><span class="line">create table student( </span><br><span class="line">sno varchar(20) not null primary key, </span><br><span class="line">sname varchar(20) not null, </span><br><span class="line">ssex varchar(20) not null, </span><br><span class="line">sbirthday datetime, </span><br><span class="line">class varchar(20) </span><br><span class="line">); </span><br><span class="line">#建立教师表 </span><br><span class="line">create table teacher </span><br><span class="line">( </span><br><span class="line">tno varchar(20) not null primary key, </span><br><span class="line">tname varchar(20) not null, </span><br><span class="line">tsex varchar(20) not null, </span><br><span class="line">tbirthday datetime, </span><br><span class="line">prof varchar(20), </span><br><span class="line">depart varchar(20) not null </span><br><span class="line">); </span><br><span class="line">#建立课程表 course </span><br><span class="line">create table course </span><br><span class="line">( </span><br><span class="line">cno varchar(20) not null primary key, </span><br><span class="line">cname varchar(20) not null, </span><br><span class="line">tno varchar(20) not null, </span><br><span class="line">foreign key(tno) references teacher(tno) </span><br><span class="line">); </span><br><span class="line">#建立成绩表 </span><br><span class="line">create table score </span><br><span class="line">( </span><br><span class="line">sno varchar(20), </span><br><span class="line">foreign key(sno) references student(sno), </span><br><span class="line">cno varchar(20) not null, </span><br><span class="line">foreign key(cno) references course(cno), </span><br><span class="line">degree decimal </span><br><span class="line">); </span><br></pre></td></tr></table></figure>
+<p>创建成绩表时出错，错误提示：1215 - Cannot add foreign key constraint</p>
+<h3 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3><p>产生错误提示：1215 - Cannot add foreign key constraint的主要原因：</p>
+<p>（1）外键对应的字段数据类型不一致（类型一致）</p>
+<p>（2）设置外键时“删除时”设置为“SET NULL”</p>
+<p>（3）两张表的存储引擎不一致（同为innoDB）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table score </span><br><span class="line">( </span><br><span class="line">sno varchar(20), </span><br><span class="line">foreign key(sno) references student(sno), </span><br><span class="line">-- cno varchar(20) not null, </span><br><span class="line">-- foreign key(cno) references course(cno), </span><br><span class="line">-- degree decimal </span><br><span class="line">); </span><br></pre></td></tr></table></figure>
+<p>经过测试，在设置2、3行时出现问题。但是四个表的插入语句一起执行时不会报错。</p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>暂未弄清BUG出现的原因，解决的办法就是学生表和成绩表同时打。</p>
  
       <!-- reward -->
       
@@ -158,7 +163,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/11/tomcat403%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/04/20/BUG/MySQL%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -169,7 +174,7 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/10/29/tomcat%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" class="article-nav-link">
+      <a href="/2021/05/13/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88java+mysql%EF%BC%89/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
@@ -179,7 +184,7 @@
       </a>
     
     
-      <a href="/2021/10/10/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="article-nav-link">
+      <a href="/2021/04/06/MySQL%E5%AD%A6%E4%B9%A0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>
