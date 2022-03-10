@@ -47,7 +47,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-从零开始学WEB前端/12-JavaScript异步请求/12-JavaScript异步请求"
+  id="post-从零开始学WEB前端/13-VUE介绍/13-VUE介绍"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -56,15 +56,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" class="article-date">
-  <time datetime="2022-03-10T15:09:12.988Z" itemprop="datePublished">2022-03-10</time>
+      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/13-VUE%E4%BB%8B%E7%BB%8D/13-VUE%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2022-03-10T15:49:11.307Z" itemprop="datePublished">2022-03-10</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.6k</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">6 分钟</span>
+            <span class="post-count">7 分钟</span>
         </span>
     </span>
 </div>
@@ -88,77 +88,67 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="从零开始学WEB前端💦——JavaScript异步请求"><a href="#从零开始学WEB前端💦——JavaScript异步请求" class="headerlink" title="从零开始学WEB前端💦——JavaScript异步请求"></a>从零开始学WEB前端💦——JavaScript异步请求</h1><h2 id="📓项目介绍"><a href="#📓项目介绍" class="headerlink" title="📓项目介绍"></a>📓项目介绍</h2><p>先做个自我介绍，本人是一个没人写前端所以就自学前端的后端程序员🙇。在此项目中我会和大家一起从零基础开始学习前端，从后端程序员的视角来看前端，受限于作者的水平本项目暂时只会更新到前端框架VUE，不会涉及node.js。该项目适合零基础的小白或者和我一样开发网站没人写前端所以自学前端的后端程序员😂。</p>
+  <h1 id="从零开始学WEB前端💦——VUE介绍"><a href="#从零开始学WEB前端💦——VUE介绍" class="headerlink" title="从零开始学WEB前端💦——VUE介绍"></a>从零开始学WEB前端💦——VUE介绍</h1><h2 id="📓项目介绍"><a href="#📓项目介绍" class="headerlink" title="📓项目介绍"></a>📓项目介绍</h2><p>先做个自我介绍，本人是一个没人写前端所以就自学前端的后端程序员🙇。在此项目中我会和大家一起从零基础开始学习前端，从后端程序员的视角来看前端，受限于作者的水平本项目暂时只会更新到前端框架VUE，不会涉及node.js。该项目适合零基础的小白或者和我一样开发网站没人写前端所以自学前端的后端程序员😂。</p>
 <p>该项目的学习顺序是按照我自己学习时总结出来的，其中的每个知识点都是我认真去理解的，同时也查了很多的资料，所有的参考资料我都放在了文章末尾。尊重开源，尊重知识产权。每一个案例我都亲手写过并觉得不错才放上去的。每次的代码和笔记我都放在了开源仓库里，有需要的同学请不要吝啬给我一个star。如果觉得本文写的不错的话记得点赞+关注，你们的支持是我坚持下去的动力😃。</p>
 <blockquote>
-<p>独怜幽草涧边生，上有黄鹂深树鸣。<br>春潮带雨晚来急，野渡无人舟自横。</p>
-<p>——韦应物《滁州西涧》</p>
+<p>昨夜星辰昨夜风，画楼西畔桂堂东。<br>身无彩凤双飞翼，心有灵犀一点通。<br>隔座送钩春酒暖，分曹射覆蜡灯红。<br>嗟余听鼓应官去，走马兰台类转蓬。</p>
+<p>——李商隐《无题·昨夜星辰昨夜风》</p>
 </blockquote>
 <p>语雀地址：<a target="_blank" rel="noopener" href="https://www.yuque.com/beilayanmen">https://www.yuque.com/beilayanmen</a></p>
 <p>Github地址：<a target="_blank" rel="noopener" href="https://github.com/SuZui-cn/my-web">https://github.com/SuZui-cn/my-web</a></p>
 <p>Gitee地址：<a target="_blank" rel="noopener" href="https://gitee.com/north_gate/my-web">https://gitee.com/north_gate/my-web</a></p>
 <p>个人博客地址：<a target="_blank" rel="noopener" href="https://foollyone.cn/">https://foollyone.cn/</a></p>
 <h2 id="⌨本文知识点"><a href="#⌨本文知识点" class="headerlink" title="⌨本文知识点"></a>⌨本文知识点</h2><ul>
-<li>AJAX介绍</li>
-<li>原生AJAX<ul>
-<li>创建对象</li>
-<li>发起请求</li>
-<li>服务器响应</li>
-<li></li>
-</ul>
-</li>
-<li>案例</li>
+<li>什么是VUE</li>
+<li>VUE的特点</li>
+<li>我们的第一个VUE程序</li>
+<li>什么是MVVM</li>
 </ul>
 <a id="more"></a>
 
-<p>AJAX(异步请求) 作为和后端交互的主要方式，这个技术一定要着重掌握。在掌握原生AJAX之后学习异步请求框架会变得非常的轻松。</p>
-<h2 id="AJAX介绍"><a href="#AJAX介绍" class="headerlink" title="AJAX介绍"></a>AJAX介绍</h2><blockquote>
-<p>AJAX = 异步 JavaScript 和 XML。</p>
-<p>AJAX 是一种用于创建快速动态网页的技术。</p>
-<p>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
-<p>传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。</p>
-<p>有很多使用 AJAX 的应用程序案例：新浪微博、Google 地图、开心网等等。</p>
-<p>——菜鸟教程</p>
+<p>从本节开始我们就要介绍前端框架VUE，并且需要逐渐的适应前端工程化的开发。VUE作为国人开发的框架，本人是非常喜欢的，但是由于本人的水平一般，所以很多地方讲的不好而且内容较少。如果要深入前端学习的同学建议多花点时间在JavaScript上面，有了良好的JavaScript基础，再来学习前端框架会非常的轻松。</p>
+<h2 id="什么是VUE"><a href="#什么是VUE" class="headerlink" title="什么是VUE"></a>什么是VUE</h2><blockquote>
+<p>Vue (读音 /vjuː/，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p>——VUE官方文档</p>
 </blockquote>
+<p>VUE由国人<strong>尤雨溪</strong>所开发。</p>
 <blockquote>
-<p>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<p>尤雨溪是一位美籍华人，在上海复旦大学附中读完高中后，在美国完成大学学业，本科毕业于 Colgate University，后在 Parsons 设计学院获得 Design &amp; Technology 艺术硕士学位。他是 Vue Technology LLC 创始人，曾经在 Google Creative Lab 就职，参与过多个项目的界面原型研发，后加入 Meteor，参与 Meteor 框架本身的维护和 Meteor Galaxy 平台的交互设计与前端开发。</p>
+<p>2014 年 2 月，尤雨溪开源了一个前端开发库 Vue.js。Vue.js 是构建 Web 界面的 JavaScript 库，也是一个通过简洁的 API 提供高效数据绑定和灵活组件的系统。</p>
+<p>2016 年 9 月 3 日，在南京的 JSConf 上，尤雨溪正式宣布以技术顾问的身份加盟阿里巴巴 Weex 团队，来做 Vue 和 Weex 的 JavaScript runtime 整合，目标是让大家能用 Vue 的语法跨三端。</p>
+<p>目前，尤雨溪全职投入 Vue.js 的开发与维护，立志将 Vue.js 打造成与 Angular/React 平起平坐的世界顶级框架。</p>
 </blockquote>
-<p>工作原理</p>
-<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310224058964.png" alt="image-20220310224058964"></p>
-<h2 id="原生AJAX"><a href="#原生AJAX" class="headerlink" title="原生AJAX"></a>原生AJAX</h2><p>原生AJAX的使用步骤分为一下几步：</p>
+<h2 id="VUE的特点"><a href="#VUE的特点" class="headerlink" title="VUE的特点"></a>VUE的特点</h2><p>以下取自C语言中文网：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6714.html">http://c.biancheng.net/view/6714.html</a></p>
 <ul>
-<li>创建对象</li>
-<li>发起请求</li>
-<li>服务器响应</li>
-<li>onreadystatechange 事件</li>
+<li><p><strong>轻量级的框架</strong>——Vue.js 能够自动追踪依赖的模板表达式和计算属性，提供 MVVM 数据绑定和一个可组合的组件系统，具有简单、灵活的 API，使读者更加容易理解，能够更快上手。</p>
+</li>
+<li><p><strong>双向数据绑定</strong>——声明式渲染是数据双向绑定的主要体现，同样也是 Vue.js 的核心，它允许采用简洁的模板语法将数据声明式渲染整合进 DOM。</p>
+</li>
+<li><p> <strong>指令</strong>——Vue.js 与页面进行交互，主要就是通过内置指令来完成的，指令的作用是当其表达式的值改变时相应地将某些行为应用到 DOM 上。</p>
+</li>
+<li><p><strong>组件化</strong>——组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在 Vue 中，父子组件通过 props 传递通信，从父向子单向传递。子组件与父组件通信，通过触发事件通知父组件改变数据。这样就形成了一个基本的父子通信模式。在开发中组件和 HTML、JavaScript 等有非常紧密的关系时，可以根据实际的需要自定义组件，使开发变得更加便利，可大量减少代码编写量。组件还支持热重载（hotreload）。当我们做了修改时，不会刷新页面，只是对组件本身进行立刻重载，不会影响整个应用当前的状态。CSS 也支持热重载。</p>
+</li>
+<li><p><strong>客户端路由</strong>——Vue-router 是 Vue.js 官方的路由插件，与 Vue.js 深度集成，用于构建单页面应用。Vue 单页面应用是基于路由和组件的，路由用于设定访问路径，并将路径和组件映射起来，传统的页面是通过超链接实现页面的切换和跳转的。</p>
+</li>
+<li><p><strong>状态管理</strong>——状态管理实际就是一个单向的数据流，State 驱动 View 的渲染，而用户对 View 进行操作产生 Action，使 State 产生变化，从而使 View 重新渲染，形成一个单独的组件。</p>
+</li>
 </ul>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>XMLHttpRequest 是 AJAX 的基础。</p>
-<p>所有现代浏览器均支持 XMLHttpRequest 对象（IE5 和 IE6 使用 ActiveXObject）。</p>
-<p>XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// IE6, IE5 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h3><p>如需将请求发送到服务器，我们使用 <strong>XMLHttpRequest</strong> 对象的 <strong>open()</strong> 和 <strong>send()</strong> 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.open(&quot;GET&quot;,&quot;ajax_info.txt&quot;,true);</span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310230314612.png" alt="image-20220310230314612"></p>
-<p>以下情况使用POST：</p>
-<ul>
-<li> 不愿使用缓存文件（更新服务器上的文件或数据库）</li>
-<li>向服务器发送大量数据（POST 没有数据量限制）</li>
-<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
+<h2 id="我们的第一个VUE程序"><a href="#我们的第一个VUE程序" class="headerlink" title="我们的第一个VUE程序"></a>我们的第一个VUE程序</h2><p>我们先打开VUE的官网</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">https://cn.vuejs.org/</a></p>
+<p>之后点击“起步”</p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310234235032.png" alt="image-20220310234235032"></p>
+<p>在这个位置，我们将CDN复制下来。</p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310234334313.png" alt="image-20220310234334313"></p>
+<p>之后我们创建一个<code>.html</code>结尾的文件并写入下面的内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里的&#123;&#123;&#125;&#125;是插值表达式，用于将data里的数据渲染到页面上 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- VUE2需要一个根节点，以这个根节点为基础来编写代码 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 这里实例化了一个Vue对象，注意V是大写的。</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 挂载刚刚到根节点。</span></span></span><br><span class="line"><span class="javascript">        el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// data对象用于存放数据。</span></span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          msg: <span class="string">&#x27;帅者的肯定&#x27;</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="什么是MVVM"><a href="#什么是MVVM" class="headerlink" title="什么是MVVM"></a>什么是MVVM</h2><ul>
+<li><code>Model</code>是代表<strong>数据模型</strong>，也可以在<code>Model</code>中定义数据修改和操作的业务逻辑。</li>
+<li><code>View</code>是代表<strong>UI组件</strong>，它负责将数据模型转化成UI展现出来。</li>
+<li><code>ViewModel</code>是一个同步View和Model的对象。</li>
 </ul>
-<h3 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h3><p>如需获得来自服务器的响应，请使用 XMLHttpRequest 对象的 responseText 或 responseXML 属性。</p>
-<p>如果来自服务器的响应并非 XML，请使用 responseText 属性。</p>
-<h3 id="onreadystatechange-事件"><a href="#onreadystatechange-事件" class="headerlink" title="onreadystatechange 事件"></a>onreadystatechange 事件</h3><p>当请求被发送到服务器时，我们需要执行一些基于响应的任务。</p>
-<p>每当 readyState 改变时，就会触发 onreadystatechange 事件。</p>
-<p>readyState 属性存有 XMLHttpRequest 的状态信息。</p>
-<p>下面是 XMLHttpRequest 对象的三个重要的属性：</p>
-<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310230539436.png" alt="image-20220310230539436"></p>
-<p>在 onreadystatechange 事件中，我们规定当服务器响应已做好被处理的准备时所执行的任务。</p>
-<p>当 readyState 等于 4 且状态为 200 时，表示响应已就绪：</p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>在实际的开发中url 应该为后端接口的地址，这里为了方便测试，所以采取读取本地文件的方式。但是由于谷歌的安全策略，AJAX无法访问本地文件。所以可以直接看菜鸟教程的案例。</p>
-<p>地址：<a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=tryajax_first">https://www.runoob.com/try/try.php?filename=tryajax_first</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">loadXMLDoc</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> xmlhttp;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></span></span><br><span class="line"><span class="javascript">          xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// IE6, IE5 浏览器执行代码</span></span></span><br><span class="line"><span class="javascript">          xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">&#x27;Microsoft.XMLHTTP&#x27;</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (xmlhttp.readyState == <span class="number">4</span> &amp;&amp; xmlhttp.status == <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">&#x27;myDiv&#x27;</span>).innerHTML = xmlhttp.responseText;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="javascript">        xmlhttp.open(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;./测试.txt&#x27;</span>, <span class="literal">true</span>);</span></span><br><span class="line">        xmlhttp.send();</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;myDiv&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">h2</span>&gt;</span>使用 AJAX 修改该文本内容<span class="tag">&lt;/<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;loadXMLDoc()&quot;</span>&gt;</span>修改内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="发送get请求"><a href="#发送get请求" class="headerlink" title="发送get请求"></a>发送get请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;input name&#x3D;&quot;submit&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;submit&quot; value&#x3D;&quot;向服务器发出请求&quot; &#x2F;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    window.onload &#x3D; function () &#123;  &#x2F;&#x2F;页面初始化</span><br><span class="line">        var b &#x3D; document.getElementsByTagName(&quot;input&quot;)[0];</span><br><span class="line">        b.onclick &#x3D; function () &#123;</span><br><span class="line">            var url &#x3D; &quot;url?callback&#x3D;functionName&quot;；  &#x2F;&#x2F;设置查询字符串</span><br><span class="line">            var xhr &#x3D; createXHR();  &#x2F;&#x2F;实例化XMLHttpRequest 对象</span><br><span class="line">            xhr.open(&quot;GET&quot;, url, false);  &#x2F;&#x2F;建立连接，要求同步响应</span><br><span class="line">            xhr.send(null);  &#x2F;&#x2F;发送请求</span><br><span class="line">            console.log(xhr.responseText);  &#x2F;&#x2F;接收数据</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="发送post请求"><a href="#发送post请求" class="headerlink" title="发送post请求"></a>发送post请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.onload &#x3D; function () &#123;  &#x2F;&#x2F;页面初始化</span><br><span class="line">    var b &#x3D; document.getElementsByTagName(&quot;input&quot;)[0];</span><br><span class="line">    b.onclick &#x3D; function () &#123;</span><br><span class="line">        var url &#x3D; &quot;url&quot;;  &#x2F;&#x2F;设置请求的地址</span><br><span class="line">        var xhr &#x3D; createXHR();  &#x2F;&#x2F;实例化XMLHttpRequest 对象</span><br><span class="line">        xhr.open(&quot;POST&quot;, url, false);  &#x2F;&#x2F;建立连接，要求同步响应</span><br><span class="line">        xhr.setRequestHeader (&#39;Content-type&#39;, &#39;application&#x2F;x-www-form-urlencoded&#39;);  &#x2F;&#x2F;设置为表单方式提交</span><br><span class="line">        xhr.send(&quot;callback&#x3D;functionName&quot;);  &#x2F;&#x2F;发送请求</span><br><span class="line">        console.log(xhr.responseText);  &#x2F;&#x2F;接收数据</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310233343432.png" alt="image-20220310233343432"></p>
+<p>代码演示如下：</p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220310233242794.png" alt="image-20220310233242794"></p>
  
       <!-- reward -->
       
@@ -223,7 +213,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/13-VUE%E4%BB%8B%E7%BB%8D/13-VUE%E4%BB%8B%E7%BB%8D/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -234,17 +224,8 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/13-VUE%E4%BB%8B%E7%BB%8D/13-VUE%E4%BB%8B%E7%BB%8D/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/12-JavaScript%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>
