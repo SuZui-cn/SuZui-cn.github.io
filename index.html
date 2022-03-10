@@ -135,6 +135,71 @@
     
     
     <article
+  id="post-从零开始学WEB前端/11-JavaScript-BOM操作/11-JavaScript-BOM操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2022-03-10T14:30:22.061Z" itemprop="datePublished">2022-03-10</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="从零开始学WEB前端💦——JavaScript-BOM操作"><a href="#从零开始学WEB前端💦——JavaScript-BOM操作" class="headerlink" title="从零开始学WEB前端💦——JavaScript-BOM操作"></a>从零开始学WEB前端💦——JavaScript-BOM操作</h1><h2 id="📓项目介绍"><a href="#📓项目介绍" class="headerlink" title="📓项目介绍"></a>📓项目介绍</h2><p>先做个自我介绍，本人是一个没人写前端所以就自学前端的后端程序员🙇。在此项目中我会和大家一起从零基础开始学习前端，从后端程序员的视角来看前端，受限于作者的水平本项目暂时只会更新到前端框架VUE，不会涉及node.js。该项目适合零基础的小白或者和我一样开发网站没人写前端所以自学前端的后端程序员😂。</p>
+<p>该项目的学习顺序是按照我自己学习时总结出来的，其中的每个知识点都是我认真去理解的，同时也查了很多的资料，所有的参考资料我都放在了文章末尾。尊重开源，尊重知识产权。每一个案例我都亲手写过并觉得不错才放上去的。每次的代码和笔记我都放在了开源仓库里，有需要的同学请不要吝啬给我一个star。如果觉得本文写的不错的话记得点赞+关注，你们的支持是我坚持下去的动力😃。</p>
+<blockquote>
+<p>醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。<br>马作的卢飞快，弓如霹雳弦惊。了却君王天下事，赢得生前身后名。可怜白发生！</p>
+<p>——辛弃疾《破阵子·为陈同甫赋壮词以寄之》</p>
+</blockquote>
+<p>语雀地址：<a target="_blank" rel="noopener" href="https://www.yuque.com/beilayanmen">https://www.yuque.com/beilayanmen</a></p>
+<p>Github地址：<a target="_blank" rel="noopener" href="https://github.com/SuZui-cn/my-web">https://github.com/SuZui-cn/my-web</a></p>
+<p>Gitee地址：<a target="_blank" rel="noopener" href="https://gitee.com/north_gate/my-web">https://gitee.com/north_gate/my-web</a></p>
+<p>个人博客地址：<a target="_blank" rel="noopener" href="https://foollyone.cn/">https://foollyone.cn/</a></p>
+<h2 id="⌨本文知识点"><a href="#⌨本文知识点" class="headerlink" title="⌨本文知识点"></a>⌨本文知识点</h2><ul>
+<li>window对象<ul>
+<li>全局作用域</li>
+<li>常见事件</li>
+<li>调节窗口大小</li>
+<li>定时器setTimeout</li>
+<li>this指向问题</li>
+</ul>
+</li>
+<li>location对象<ul>
+<li>跳转页面</li>
+<li>location常见方法</li>
+</ul>
+</li>
+<li>小结</li>
+</ul> 
+      <a class="article-more-link" href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/11-JavaScript-BOM%E6%93%8D%E4%BD%9C/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-从零开始学WEB前端/10-JavaScript-DOM操作/10-JavaScript-DOM操作"
   class="article article-type-post"
   itemscope
@@ -178,6 +243,7 @@
 <li>插入节点</li>
 <li>删除节点</li>
 <li>事件</li>
+<li>轮播图案例</li>
 </ul> 
       <a class="article-more-link" href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/10-JavaScript-DOM%E6%93%8D%E4%BD%9C/10-JavaScript-DOM%E6%93%8D%E4%BD%9C/"
         >阅读更多...</a
@@ -705,71 +771,6 @@
 </li>
 </ul> 
       <a class="article-more-link" href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/02-HTML%E7%90%86%E8%AE%BA%E8%AE%B2%E8%A7%A3/02-HTML%E7%90%86%E8%AE%BA%E8%AE%B2%E8%A7%A3/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-从零开始学WEB前端/01-前置知识以及环境搭建/01-前置知识以及环境搭建"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/01-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/01-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2022-03-10T06:46:44.961Z" itemprop="datePublished">2022-03-10</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="从零开始学WEB前端💦——01前置知识以及环境搭建"><a href="#从零开始学WEB前端💦——01前置知识以及环境搭建" class="headerlink" title="从零开始学WEB前端💦——01前置知识以及环境搭建"></a>从零开始学WEB前端💦——01前置知识以及环境搭建</h1><h2 id="📓项目介绍"><a href="#📓项目介绍" class="headerlink" title="📓项目介绍"></a>📓项目介绍</h2><p>先做个自我介绍，本人是一个没人写前端所以就自学前端的后端程序员🙇。在此项目中我会和大家一起从零基础开始学习前端，从后端程序员的视角来看前端，受限于作者的水平本项目暂时只会更新到前端框架VUE，不会涉及node.js。该项目适合零基础的小白或者和我一样开发网站没人写前端所以自学前端的后端程序员😂。</p>
-<p>该项目的学习顺序是按照我自己学习时总结出来的，其中的每个知识点都是我认真去理解的，同时也查了很多的资料，所有的参考资料我都放在了文章末尾。尊重开源，尊重知识产权。每一个案例我都亲手写过并觉得不错才放上去的。每次的代码和笔记我都放在了开源仓库里，有需要的同学请不要吝啬给我一个star。如果觉得本文写的不错的话记得点赞+关注，你们的支持是我坚持下去的动力😃。</p>
-<blockquote>
-<p>工欲善其事，必先利其器 ——《论语·卫灵公》</p>
-</blockquote>
-<p>语雀地址：<a target="_blank" rel="noopener" href="https://www.yuque.com/beilayanmen">https://www.yuque.com/beilayanmen</a></p>
-<p>Github地址：<a target="_blank" rel="noopener" href="https://github.com/SuZui-cn/my-web">https://github.com/SuZui-cn/my-web</a></p>
-<p>Gitee地址：<a target="_blank" rel="noopener" href="https://gitee.com/north_gate/my-web">https://gitee.com/north_gate/my-web</a></p>
-<p>个人博客地址：<a target="_blank" rel="noopener" href="https://foollyone.cn/">https://foollyone.cn/</a></p>
-<h2 id="⌨本文知识点"><a href="#⌨本文知识点" class="headerlink" title="⌨本文知识点"></a>⌨本文知识点</h2><ul>
-<li><p>前置知识</p>
-</li>
-<li><p>Chrome浏览器</p>
-<ul>
-<li>下载安装</li>
-</ul>
-</li>
-<li><p>VSCode</p>
-<ul>
-<li><p>下载安装</p>
-</li>
-<li><p>汉化</p>
-</li>
-</ul>
-</li>
-</ul> 
-      <a class="article-more-link" href="/2022/03/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6WEB%E5%89%8D%E7%AB%AF/01-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/01-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
         >阅读更多...</a
       >
        
