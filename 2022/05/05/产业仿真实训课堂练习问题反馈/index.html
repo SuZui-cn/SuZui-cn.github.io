@@ -42,7 +42,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-BUG/String转Date问题"
+  id="post-产业仿真实训课堂练习问题反馈"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -51,15 +51,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2022/03/30/BUG/String%E8%BD%ACDate%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2022-03-30T06:56:28.231Z" itemprop="datePublished">2022-03-30</time>
+      <a href="/2022/05/05/%E4%BA%A7%E4%B8%9A%E4%BB%BF%E7%9C%9F%E5%AE%9E%E8%AE%AD%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" class="article-date">
+  <time datetime="2022-05-05T08:20:04.557Z" itemprop="datePublished">2022-05-05</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">415</span>
+            <span class="post-count">543</span>
         </span>
     </span>
 
@@ -83,23 +83,29 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="String转Date报错"><a href="#String转Date报错" class="headerlink" title="String转Date报错"></a>String转Date报错</h1><h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">未能将‘ java.lang.string’类型的属性值转换为‘ po.endtime’属性所需的类型‘ java.util.date’; 嵌套异常为 org.springwork.core.convert.convert.converversionfailedexception: 未能将[ java.lang.string ]类型转换为[@org ]类型。值“2022-03-30”的 springframework.format.annotation.datetimformat java.util.date; 嵌套异常是 java.lang.illegalargumentexception: 值的解析尝试失败[2022-03-30]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;JSON parse error: Cannot deserialize value of type &#96;java.time.LocalDateTime&#96; from String &quot;2022-02-28T16:12:00.000Z&quot;: Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text &#39;2022-02-28T16:12:00.000Z&#39; could not be parsed at index 10; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type &#96;java.time.LocalDateTime&#96; from String &quot;2022-02-28T16:12:00.000Z&quot;: Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text &#39;2022-02-28T16:12:00.000Z&#39; could not be parsed at index 10</span><br><span class="line"> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 171] (through reference chain: com.suzui.homework.entity.Homework[&quot;hbegindate&quot;])&quot;</span><br></pre></td></tr></table></figure>
+  <h1 id="产业仿真实训课堂练习问题反馈"><a href="#产业仿真实训课堂练习问题反馈" class="headerlink" title="产业仿真实训课堂练习问题反馈"></a>产业仿真实训课堂练习问题反馈</h1><p>date:2020.05.05</p>
+<p>user:Liu Xiaohu</p>
 <a id="more"></a>
 
-<p>加上@DateTimeFormat注解之后依然失败。</p>
-<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/7C8D22EB634FFBFE90CC211EEFB69541.JPG" alt="img"></p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>使用fastjson替换springboot原本的jackson</p>
-<h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220330142723256.png" alt="image-20220330142723256"></p>
-<h3 id="编写配置类"><a href="#编写配置类" class="headerlink" title="编写配置类"></a>编写配置类</h3><p>配置类中需要注意设置的日期格式</p>
-<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220330142813064.png" alt="image-20220330142813064"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.support.config.FastJsonConfig;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.converter.HttpMessageConverter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.EnableWebMvc;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.nio.charset.StandardCharsets;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebMvc</span> <span class="comment">// 必须要有这个注解，否则报错</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> </span>&#123;</span><br><span class="line">        FastJsonHttpMessageConverter fastJsonConverter = <span class="keyword">new</span> FastJsonHttpMessageConverter();</span><br><span class="line">        FastJsonConfig config = <span class="keyword">new</span> FastJsonConfig();</span><br><span class="line">        config.setCharset(StandardCharsets.UTF_8);</span><br><span class="line">        config.setDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ssS&quot;</span>);</span><br><span class="line">        config.setSerializerFeatures(SerializerFeature.WriteMapNullValue);</span><br><span class="line">        fastJsonConverter.setFastJsonConfig(config);</span><br><span class="line">        List&lt;MediaType&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(MediaType.APPLICATION_JSON);</span><br><span class="line">        fastJsonConverter.setSupportedMediaTypes(list);</span><br><span class="line">        converters.add(fastJsonConverter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+<h2 id="问题一：static下的静态资源无法访问"><a href="#问题一：static下的静态资源无法访问" class="headerlink" title="问题一：static下的静态资源无法访问"></a>问题一：static下的静态资源无法访问</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在Spring boot中默认对以下四个目录下的静态资源文件放行</p>
+<ul>
+<li>classpath:/public/</li>
+<li>classpath:/resources/</li>
+<li>classpath:/static/</li>
+<li>classpath:/META-INFO/resouces/</li>
+</ul>
+<p>同时查看生成的文件中是否存在网页文件</p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220505161350118.png" alt="image-20220505161350118"></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>单独编写html页面实现效果。</p>
+<h2 id="问题二：html页面中的-lt-button-gt-标签在-lt-form-gt-表单中依然触发自动提交"><a href="#问题二：html页面中的-lt-button-gt-标签在-lt-form-gt-表单中依然触发自动提交" class="headerlink" title="问题二：html页面中的&lt;button&gt; 标签在&lt;form&gt; 表单中依然触发自动提交"></a>问题二：html页面中的<code>&lt;button&gt;</code> 标签在<code>&lt;form&gt;</code> 表单中依然触发自动提交</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>在提供的网页文件中是使用的<code>&lt;form&gt;</code> 标签的action属性进行提交，修改为异步之后依然会触发自动提交。</p>
+<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>修改<code>&lt;button&gt;</code>标签为<code>&lt;input type=&quot;button&quot;&gt;</code></p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220505161657850.png" alt="image-20220505161657850"></p>
+<h2 id="问题三：单独编写登录页面触发跨域"><a href="#问题三：单独编写登录页面触发跨域" class="headerlink" title="问题三：单独编写登录页面触发跨域"></a>问题三：单独编写登录页面触发跨域</h2><h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h3><p>因为是单独编写html页面，因此在请求本地的接口时会触发跨域问题。</p>
+<h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.suzui.mi.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解决跨域问题</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 北落燕门</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addMapping(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .allowedMethods(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;HEAD&quot;</span>, <span class="string">&quot;POST&quot;</span>, <span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;DELETE&quot;</span>, <span class="string">&quot;OPTIONS&quot;</span>)</span><br><span class="line">                .allowCredentials(<span class="keyword">true</span>)</span><br><span class="line">                .maxAge(<span class="number">3600</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在后台添加配置解决该问题</p>
+<h2 id="问题四：字段校验问题"><a href="#问题四：字段校验问题" class="headerlink" title="问题四：字段校验问题"></a>问题四：字段校验问题</h2><h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h3><p>用户名和密码存在为空以及长度不定的问题</p>
+<h3 id="解决办法-3"><a href="#解决办法-3" class="headerlink" title="解决办法"></a>解决办法</h3><p>采用实体类校验</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.suzui.mi.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableField;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableId;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.EqualsAndHashCode;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.validator.constraints.Length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.constraints.NotBlank;</span><br><span class="line"><span class="keyword">import</span> javax.validation.constraints.NotEmpty;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 北落燕门</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2022-04-28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@EqualsAndHashCode(callSuper = false)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Users</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableId(value = &quot;user_id&quot;, type = IdType.AUTO)</span></span><br><span class="line">    <span class="keyword">private</span> Integer userId;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@TableField(&quot;userName&quot;)</span></span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;用户名不能为空&quot;)</span></span><br><span class="line">    <span class="meta">@NotEmpty</span></span><br><span class="line">    <span class="meta">@Length(min = 2, max = 6, message = &quot;用户名的有效长度为2-6位&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;密码不能为空&quot;)</span></span><br><span class="line">    <span class="meta">@Length(min = 6, max = 12, message = &quot;密码在6-12位之间&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
  
       <!-- reward -->
       
@@ -164,7 +170,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/30/BUG/String%E8%BD%ACDate%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/05/05/%E4%BA%A7%E4%B8%9A%E4%BB%BF%E7%9C%9F%E5%AE%9E%E8%AE%AD%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -175,17 +181,8 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/05/05/%E4%BA%A7%E4%B8%9A%E4%BB%BF%E7%9C%9F%E5%AE%9E%E8%AE%AD%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/03/30/BUG/Hexo%E5%9B%BE%E7%89%87%E9%98%B2%E7%9B%97%E9%93%BE%E9%97%AE%E9%A2%98/" class="article-nav-link">
+      <a href="/2022/03/30/BUG/String%E8%BD%ACDate%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>
