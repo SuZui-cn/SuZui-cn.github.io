@@ -130,6 +130,50 @@
     
     
     <article
+  id="post-BUG/SpringMVC序列化问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2022/03/02/BUG/SpringMVC%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-02T08:47:29.079Z" itemprop="datePublished">2022-03-02</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="SpringMVC序列化问题"><a href="#SpringMVC序列化问题" class="headerlink" title="SpringMVC序列化问题"></a>SpringMVC序列化问题</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>做练习的时候定义了一个练习的接口，正常情况下应该返回数据，但是却出现了下面的异常</p>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220302170008547.png" alt="image-20220302170008547"></p>
+<p>异常如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HTTP Status 500 - No converter found for return value of type: class com.domain.Result</span><br><span class="line">type Exception report</span><br><span class="line">message No converter found for return value of type: class com.domain.Result</span><br><span class="line">description The server encountered an internal error that prevented it from fulfilling this request.</span><br><span class="line">exception</span><br><span class="line">org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.domain.Result</span><br><span class="line">org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:226)</span><br><span class="line">.......</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/north_gate/drawing-bed/raw/master/images/image-20220302165839654.png" alt="image-20220302165839654"></p> 
+      <a class="article-more-link" href="/2022/03/02/BUG/SpringMVC%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-BUG/JDBC及Mybatis常见BUG"
   class="article article-type-post"
   itemscope
@@ -595,46 +639,6 @@
        
   <h1 id="labuladong-的算法小抄"><a href="#labuladong-的算法小抄" class="headerlink" title="labuladong 的算法小抄"></a>labuladong 的算法小抄</h1> 
       <a class="article-more-link" href="/2022/01/28/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90/labuladong%20%E7%9A%84%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-Git使用教程"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2022/01/27/Git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2022-01-27T08:44:42.132Z" itemprop="datePublished">2022-01-27</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h1><p>本教程用于入门git</p> 
-      <a class="article-more-link" href="/2022/01/27/Git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"
         >阅读更多...</a
       >
        
